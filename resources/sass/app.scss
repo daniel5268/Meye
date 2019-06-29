@@ -1,0 +1,25 @@
+ // Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+.meye-btn-blue{
+	background: $blue;
+	border: 2px solid rgba(50,50,50,.1); 
+	&:hover{
+		border: 2px solid rgba(250,250,250,.1); 
+		background: $greenHover;
+	}
+}
+.meye-btn-green{
+	background: $green;
+	border: 2px solid rgba(50,50,50,.1); 
+	&:hover{
+		border: 2px solid rgba(250,250,250,.1); 
+		background: $greenHover;
+	}
+}
