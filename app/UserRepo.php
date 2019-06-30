@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 
 class UserRepo extends Model
 {
@@ -44,5 +45,17 @@ class UserRepo extends Model
 		$user = self::findById($id);
 		$user->password = Hash::make($password);
 		$user->save();
+	}
+
+	public static function validatePassword($password)
+	{
+		return Hash::check($password,Auth::user()->password);
+	}
+	
+	public static function validateCredentials($username,$password)
+	{
+		dd($username);
+		$hash = self::findByUsername($username)->password;
+		return Hash::check($password,$hash);
 	}
 }

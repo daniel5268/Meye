@@ -31,3 +31,8 @@ Route::get('/appinit', 'BossController@init');
 Route::get('/password/reset', 'BossController@passwordResetForm')->name('passwordReset')->middleware('authWarning')->middleware('checkRole:admin');
 
 Route::post('/password/reset', 'BossController@passwordReset')->middleware('authWarning')->middleware('checkRole:admin');
+
+Route::get('/password/update', 'UserController@passwordUpdateForm')->name('passwordUpdate')->middleware('authWarning');
+
+Route::post('/password/update', 'UserController@passwordUpdate')->name('passwordUpdate');
+

@@ -48,6 +48,9 @@
                                     </li>                                
                                 @endif
                                 <li class="nav-item" >
+                                    <a href="{{route('passwordUpdate')}}" class="nav-link pl-2 mr-1">Cambiar contraseña</a>
+                                </li>
+                                <li class="nav-item" >
                                     <form method="POST" action="{{ route('logout') }}">
                                         @csrf
                                         <button class="btn btn-link" type="submit">Salir</button>
