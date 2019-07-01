@@ -23,3 +23,20 @@
 		background: $greenHover;
 	}
 }
+
+.nav-link{
+	transition: 0.3s;
+	&:hover{
+		background: rgba(255,255,255,.1);
+	}
+}
+
+.btn-link{
+	background: transparent;
+	border-radius: 0;
+	width: 100%;
+	&:hover{
+		text-decoration: none;
+		background: rgba(255,255,255,.1);
+	}
+}

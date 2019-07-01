@@ -22,8 +22,6 @@ class CreatePermitsTable extends Migration
             $table->unsignedBigInteger('pj_id');
             $table->foreign('pj_id')->references('id')->on('pjs');
             
-            $table->tinyInteger('level');
-            
             $table->timestamps();
         });
     }

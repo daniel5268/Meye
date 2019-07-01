@@ -18,24 +18,29 @@ class CreatePjsTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
 
-            $table->string('nomb');
+            $table->string('nombre');
             $table->string('tipo');
+            $table->string('fortaleza1');
+            $table->string('fortaleza2');
+            $table->text('description')->nulable();
             
             //--- comportamiento
-            $table->tinyInteger('cari')->default(0);
-            $table->tinyInteger('vill')->default(0);
-            $table->tinyInteger('hero')->default(0);
+            $table->tinyInteger('cordura')->default(0);
+            $table->tinyInteger('carisma')->default(0);
+            $table->tinyInteger('villania')->default(0);
+            $table->tinyInteger('heroismo')->default(0);
             
             //--- visual
             $table->integer('peso')->default(0);
-            $table->integer('altu')->default(0);
-            $table->integer('apar')->default(0);
+            $table->integer('altura')->default(0);
+            $table->integer('apariencia')->default(0);
             
             //--- reservas
             $table->integer('vida')->default(0);
             $table->integer('ener')->default(0);
             $table->integer('ener2')->default(0);
             
+
             //--- tipo 1
              //--fisicos
             $table->integer('fuer')->default(0);

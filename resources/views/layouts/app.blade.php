@@ -26,34 +26,34 @@
                         </button>
 
 
-                        <div class="collapse navbar-collapse meye-navbar" id="navbar" >
+                        <div class="collapse navbar-collapse" id="navbar" >
                             <ul class="navbar-nav mr-auto d-lg-flex w-100 justify-content-between">
                                 <li class="nav-item" >
-                                    <a href="#" class="nav-link pl-2 mr-1 mt-2 mt-md-0">Crear Pj</a>
-                                </li>
-                                <li class="nav-item active" >
-                                    <a href="#" class="nav-link pl-2 mr-1">Ver mis Pjs</a>
+                                    <a href="#" class="nav-link pl-2  mt-2 mt-md-0 text-light">Crear Pj</a>
                                 </li>
                                 <li class="nav-item" >
-                                    <a href="#" class="nav-link pl-2 mr-1">Visitar Pjs</a>
+                                    <a href="#" class="nav-link pl-2  text-light">Ver mis Pjs</a>
+                                </li>
+                                <li class="nav-item" >
+                                    <a href="#" class="nav-link pl-2  text-light">Visitar Pjs</a>
                                 </li>
                                 @if(Auth::user()->type == 'admin')
                                     <li class="nav-item" >
-                                        <a href="{{route('passwordReset')}}" class="nav-link pl-2 mr-1">Restablecer contraseñas</a>
+                                        <a href="{{route('passwordReset')}}" class="nav-link pl-2  text-light">Restablecer contraseñas</a>
                                     </li>
                                 @endif
                                 @if(Auth::user()->type == 'master')
                                     <li class="nav-item" >
-                                        <a href="#" class="nav-link pl-2 mr-1">Asignar experiencia</a>
+                                        <a href="#" class="nav-link pl-2  text-light">Asignar experiencia</a>
                                     </li>                                
                                 @endif
                                 <li class="nav-item" >
-                                    <a href="{{route('passwordUpdate')}}" class="nav-link pl-2 mr-1">Cambiar contraseña</a>
+                                    <a href="{{route('passwordUpdate')}}" class="nav-link pl-2  text-light">Cambiar contraseña</a>
                                 </li>
                                 <li class="nav-item" >
                                     <form method="POST" action="{{ route('logout') }}">
                                         @csrf
-                                        <button class="btn btn-link" type="submit">Salir</button>
+                                        <button class="btn btn-link text-left text-light mr-auto" type="submit">Salir</button>
                                     </form>
                                 </li>
                             </ul>

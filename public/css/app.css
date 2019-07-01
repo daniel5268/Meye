@@ -11120,3 +11120,23 @@ a.text-dark:focus {
   background: #6cb2eb;
 }
 
+.nav-link {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.nav-link:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.btn-link {
+  background: transparent;
+  border-radius: 0;
+  width: 100%;
+}
+
+.btn-link:hover {
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.1);
+}
+
