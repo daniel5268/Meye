@@ -15,6 +15,15 @@ class CreateObjectPermitsTable extends Migration
     {
         Schema::create('object_permits', function (Blueprint $table) {
             $table->bigIncrements('id');
+
+            $table->unsignedBigInteger('object_id');
+            $table->foreign('object_id')->references('id')->on('objects');
+            
+            $table->unsignedBigInteger('pj_id');
+            $table->foreign('pj_id')->references('id')->on('pjs');
+
+            $table->integer('amount');
+
             $table->timestamps();
         });
     }
