@@ -51,11 +51,4 @@ class UserRepo extends Model
 	{
 		return Hash::check($password,Auth::user()->password);
 	}
-	
-	public static function validateCredentials($username,$password)
-	{
-		dd($username);
-		$hash = self::findByUsername($username)->password;
-		return Hash::check($password,$hash);
-	}
 }

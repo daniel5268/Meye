@@ -23,8 +23,10 @@ class CreatePjsTable extends Migration
             $table->string('fortaleza1');
             $table->string('fortaleza2');
             $table->text('description')->nulable();
-            
+            $table->boolean('commerse')->default(true);           
+            $table->tinyInteger('bolsa')->default(0);
             //--- comportamiento
+            
             $table->tinyInteger('cordura')->default(0);
             $table->tinyInteger('carisma')->default(0);
             $table->tinyInteger('villania')->default(0);

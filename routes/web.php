@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -10,10 +9,6 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-
-
-
 Route::get('/', 'Auth\LoginController@showLoginForm')->name('login');
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -34,5 +29,8 @@ Route::post('/password/reset', 'BossController@passwordReset')->middleware('auth
 
 Route::get('/password/update', 'UserController@passwordUpdateForm')->name('passwordUpdate')->middleware('authWarning');
 
+
 Route::post('/password/update', 'UserController@passwordUpdate')->name('passwordUpdate');
 
+Route::get('/pj/create', 'ProfileController@createPjForm')->name('createPj')->middleware('authWarning');
+Route::post('/pj/create', 'ProfileController@createPj')->name('createPj')->middleware('authWarning');
