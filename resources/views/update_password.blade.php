@@ -12,7 +12,7 @@
                     <input id="current_password" placeholder="Contraseña actual" type="password" class="form-control @error('current_password') is-invalid @enderror" name="current_password" value="" required autofocus>
 
                     @error('current_password')
-                        <span class="invalid-feedback" role="alert">
+                        <span class="invalid-feedback text-light ml-2" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
                     @enderror
@@ -22,7 +22,7 @@
                 <div class="col-xs-10 col-sm-8 col-md-6">
                     <input id="new_password" placeholder="Contraseña nueva" type="password" class="form-control @error('new_password') is-invalid @enderror" name="new_password" required>
                     @error('new_password')
-                        <span class="invalid-feedback" role="alert">
+                        <span class="invalid-feedback text-light ml-2" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
                     @enderror

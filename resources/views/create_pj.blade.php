@@ -13,7 +13,7 @@
                     <input id="nombre" type="text" class="form-control @error('nombre') is-invalid @enderror" name="nombre" value="" required autofocus>
 
                     @error('nombre')
-                        <span class="invalid-feedback" role="alert">
+                        <span class="invalid-feedback text-light ml-2" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
                     @enderror

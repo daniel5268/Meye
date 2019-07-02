@@ -28,7 +28,7 @@
 
                         <div class="collapse navbar-collapse" id="navbar" >
                             <ul class="navbar-nav mr-auto d-lg-flex w-100 justify-content-between">
-                                <li class="nav-item" >
+                                <li class="nav-item active" >
                                     <a href="{{route('createPj')}}" class="nav-link pl-2  mt-2 mt-md-0 ml-md-5 text-light">Crear Pj</a>
                                 </li>
                                 <li class="nav-item" >

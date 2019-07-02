@@ -43,9 +43,13 @@ class LoginController extends Controller
     public function login(Request $request){
         $username = $request->input('username');
 
+
+        
         $validatedData = $request->validate([
             'username'=>'required|exists:users',
-            'password' => 'required',
+            'password' => ['required',function ($attribute, $value, $fail) {
+                    
+                }],
         ]);       
         
         $credentials = $request->only('username', 'password');
@@ -53,7 +57,7 @@ class LoginController extends Controller
         if (Auth::attempt($credentials)) {
             return redirect()->route('home');
         }else{
-            return redirect()->route('login')->with('warning','Contraseña incorrecta');            
+            return redirect()->route('login')->withErrors(['password'=>'Contraseña incorrecta']);            
         }        
     }
 }

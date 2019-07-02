@@ -10,9 +10,8 @@
             <div class="form-group row justify-content-center">                
                 <div class="col-xs-10 col-sm-8 col-md-6">
                     <input id="username" placeholder="Usuario" type="text" class="form-control @error('username') is-invalid @enderror" name="username" value="{{ old('username') }}" required autocomplete="username" autofocus>
-
                     @error('username')
-                        <span class="invalid-feedback" role="alert">
+                        <span class="invalid-feedback text-light ml-2" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
                     @enderror
@@ -23,7 +22,7 @@
                     <input id="password" placeholder="Contraseña" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
 
                     @error('password')
-                        <span class="invalid-feedback" role="alert">
+                        <span class="invalid-feedback text-light ml-2" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
                     @enderror
