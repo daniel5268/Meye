@@ -7,18 +7,36 @@ use App\PjRepo;
 
 class ProfileController extends Controller
 {
+    private $types = ['Humano','Soko','Bestia'];
+    public $strength1 = ['Físico','Mental','Coordinación','Energía'];
+    public $strength2 = ['H. Corporales','H. Mentales','H. Energía'];
     public function createPjForm()
     {
     	return view('create_pj')->with([
-    		'tipos' => ['Humano','Soko','Bestia'],
-    		'fortaleza1' => ['Físico','Mental','Coordinación','Energía'],
-    		'fortaleza2' => ['H. Corporales','H. Mentales','H. Energía'],
+    		'tipos' => $this->types,
+    		'fortaleza1' => $this->strength1,
+    		'fortaleza2' => $this->strength2,
     	]);
     }
     public function createPj(Request $request)
     {
     	$validatedData = $request->validate([
-	        'nombre' => 'required'
+	        'nombre' => 'required',
+            'tipo'   => ['required',function ($attribute, $value, $fail) {
+                   if (!(in_array($value, $this->types))) {
+                        $fail('Valor no permitido, Qué extraño');
+                    } 
+                }],
+            'fortaleza1'   => ['required',function ($attribute, $value, $fail) {
+                   if (!(in_array($value, $this->strength1))) {
+                        $fail('Valor no permitido, Qué extraño');
+                    } 
+                }],
+            'fortaleza2'   => ['required',function ($attribute, $value, $fail) {
+                   if (!(in_array($value, $this->strength2))) {
+                        $fail('Valor no permitido, Qué extraño');
+                    } 
+                }],
     	]);
     	$nombre = $request->input('nombre');
     	$tipo = $request->input('tipo');

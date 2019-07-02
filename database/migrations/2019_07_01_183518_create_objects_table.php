@@ -18,12 +18,12 @@ class CreateObjectsTable extends Migration
 
 
             $table->string('name');
-            $table->integer('price')->nulable();
-            $table->integer('damage')->nulable();
-            $table->integer('resistence')->nulable();
-            $table->integer('of_blood')->nulable();
-            $table->integer('cushioned')->nulable();
-            $table->text('description')->nulable();
+            $table->integer('price')->nullable();
+            $table->integer('damage')->nullable();
+            $table->integer('resistence')->nullable();
+            $table->integer('of_blood')->nullable();
+            $table->integer('cushioned')->nullable();
+            $table->text('description')->nullable();
             $table->boolean('standard');
             $table->boolean('packable');
             $table->timestamps();

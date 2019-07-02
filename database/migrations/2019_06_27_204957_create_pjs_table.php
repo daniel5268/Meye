@@ -22,7 +22,7 @@ class CreatePjsTable extends Migration
             $table->string('tipo');
             $table->string('fortaleza1');
             $table->string('fortaleza2');
-            $table->text('description')->nulable();
+            $table->text('description')->nullable();
             $table->boolean('commerse')->default(true);           
             $table->tinyInteger('bolsa')->default(0);
             //--- comportamiento

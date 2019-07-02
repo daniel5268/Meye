@@ -47,9 +47,7 @@ class LoginController extends Controller
         
         $validatedData = $request->validate([
             'username'=>'required|exists:users',
-            'password' => ['required',function ($attribute, $value, $fail) {
-                    
-                }],
+            'password' =>'required',
         ]);       
         
         $credentials = $request->only('username', 'password');
