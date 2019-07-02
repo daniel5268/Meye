@@ -17,7 +17,7 @@ class CreateAbilitiesTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->tinyInteger('styles');
-            $table->text('description');
+            $table->text('description')->nulable();
             $table->timestamps();
         });
     }

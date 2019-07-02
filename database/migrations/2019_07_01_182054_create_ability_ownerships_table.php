@@ -22,6 +22,7 @@ class CreateAbilityOwnershipsTable extends Migration
             $table->unsignedBigInteger('pj_id');
             $table->foreign('pj_id')->references('id')->on('pjs');  
 
+            $table->text('notes')->nulable();
             
             $table->timestamps();
         });

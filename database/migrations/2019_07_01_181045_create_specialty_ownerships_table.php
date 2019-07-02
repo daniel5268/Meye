@@ -20,9 +20,7 @@ class CreateSpecialtyOwnershipsTable extends Migration
             $table->foreign('specialty_id')->references('id')->on('specialties');
             
             $table->unsignedBigInteger('pj_id');
-            $table->foreign('pj_id')->references('id')->on('pjs');            
-
-            $table->text('notes');
+            $table->foreign('pj_id')->references('id')->on('pjs');
             
             $table->timestamps();
         });
