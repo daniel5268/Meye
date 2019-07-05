@@ -62,7 +62,7 @@
                                 <strong>-</strong>
                             </button>
                         </div>
-                        <input type="text"  value="{{$pj['fuer']}}" style="text-align: center" class="form-control bg-light" placeholder="">
+                        <input type="text" pattern="[0-9]*" inputmode="numeric" value="{{$pj['fuer']}}" style="text-align: center" class="form-control bg-light" placeholder="" >
                         <div class="input-group-append">
                             <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-light" type="button">
                                 <strong>+</strong>
@@ -80,7 +80,7 @@
                                 <strong>-</strong>
                             </button>
                         </div>
-                        <input type="text"  value="{{$pj['fuer']}}" style="text-align: center" class="form-control bg-light" placeholder="">
+                        <input type="text" pattern="[0-9]*" inputmode="numeric" value="{{$pj['fuer']}}" style="text-align: center" class="form-control bg-light" placeholder="">
                         <div class="input-group-append">
                             <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-light" type="button">
                                 <strong>+</strong>
@@ -98,7 +98,7 @@
                                 <strong>-</strong>
                             </button>
                         </div>
-                        <input type="text"  value="{{$pj['fuer']}}" style="text-align: center" class="form-control bg-light" placeholder="">
+                        <input type="text" pattern="[0-9]*" inputmode="numeric" value="{{$pj['fuer']}}" style="text-align: center" class="form-control bg-light" placeholder="">
                         <div class="input-group-append">
                             <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-light" type="button">
                                 <strong>+</strong>
@@ -116,7 +116,7 @@
                                 <strong>-</strong>
                             </button>
                         </div>
-                        <input type="text"  value="{{$pj['fuer']}}" style="text-align: center" class="form-control bg-light" placeholder="">
+                        <input type="text" pattern="[0-9]*" inputmode="numeric" value="{{$pj['fuer']}}" style="text-align: center" class="form-control bg-light" placeholder="">
                         <div class="input-group-append">
                             <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-light" type="button">
                                 <strong>+</strong>
@@ -136,7 +136,7 @@
                                 <strong>-</strong>
                             </button>
                         </div>
-                        <input type="text"  value="{{$pj['fuer']}}" style="text-align: center" class="form-control bg-light" placeholder="">
+                        <input type="text" pattern="[0-9]*" inputmode="numeric" value="{{$pj['fuer']}}" style="text-align: center" class="form-control bg-light" placeholder="">
                         <div class="input-group-append">
                             <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-light" type="button">
                                 <strong>+</strong>
@@ -154,7 +154,7 @@
                                 <strong>-</strong>
                             </button>
                         </div>
-                        <input type="text"  value="{{$pj['fuer']}}" style="text-align: center" class="form-control bg-light" placeholder="">
+                        <input type="text" pattern="[0-9]*" inputmode="numeric" value="{{$pj['fuer']}}" style="text-align: center" class="form-control bg-light" placeholder="">
                         <div class="input-group-append">
                             <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-light" type="button">
                                 <strong>+</strong>
@@ -172,7 +172,7 @@
                                 <strong>-</strong>
                             </button>
                         </div>
-                        <input type="text"  value="{{$pj['fuer']}}" style="text-align: center" class="form-control bg-light" placeholder="">
+                        <input type="text" pattern="[0-9]*" inputmode="numeric" value="{{$pj['fuer']}}" style="text-align: center" class="form-control bg-light" placeholder="">
                         <div class="input-group-append">
                             <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-light" type="button">
                                 <strong>+</strong>
@@ -190,7 +190,7 @@
                                 <strong>-</strong>
                             </button>
                         </div>
-                        <input type="text"  value="{{$pj['fuer']}}" style="text-align: center" class="form-control bg-light" placeholder="">
+                        <input type="text" pattern="[0-9]*" inputmode="numeric" value="{{$pj['fuer']}}" style="text-align: center" class="form-control bg-light" placeholder="">
                         <div class="input-group-append">
                             <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-light" type="button">
                                 <strong>+</strong>
@@ -210,7 +210,7 @@
                                 <strong>-</strong>
                             </button>
                         </div>
-                        <input type="text"  value="{{$pj['fuer']}}" style="text-align: center" class="form-control bg-light" placeholder="">
+                        <input type="text" pattern="[0-9]*" inputmode="numeric" value="{{$pj['fuer']}}" style="text-align: center" class="form-control bg-light" placeholder="">
                         <div class="input-group-append">
                             <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-light" type="button">
                                 <strong>+</strong>
@@ -228,7 +228,7 @@
                                 <strong>-</strong>
                             </button>
                         </div>
-                        <input type="text"  value="{{$pj['fuer']}}" style="text-align: center" class="form-control bg-light" placeholder="">
+                        <input type="text" pattern="[0-9]*" inputmode="numeric" value="{{$pj['fuer']}}" style="text-align: center" class="form-control bg-light" placeholder="">
                         <div class="input-group-append">
                             <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-light" type="button">
                                 <strong>+</strong>
@@ -246,7 +246,7 @@
                                 <strong>-</strong>
                             </button>
                         </div>
-                        <input type="text"  value="{{$pj['fuer']}}" style="text-align: center" class="form-control bg-light" placeholder="">
+                        <input type="text" pattern="[0-9]*" inputmode="numeric" value="{{$pj['fuer']}}" style="text-align: center" class="form-control bg-light" placeholder="">
                         <div class="input-group-append">
                             <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-light" type="button">
                                 <strong>+</strong>
@@ -264,7 +264,7 @@
                                 <strong>-</strong>
                             </button>
                         </div>
-                        <input type="text"  value="{{$pj['fuer']}}" style="text-align: center" class="form-control bg-light" placeholder="">
+                        <input type="text" pattern="[0-9]*" inputmode="numeric" value="{{$pj['fuer']}}" style="text-align: center" class="form-control bg-light" placeholder="">
                         <div class="input-group-append">
                             <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-light" type="button">
                                 <strong>+</strong>
@@ -288,7 +288,7 @@
                                 <strong>-</strong>
                             </button>
                         </div>
-                        <input type="text"  value="{{$pj['fuer']}}" style="text-align: center" class="form-control bg-light" placeholder="">
+                        <input type="text" pattern="[0-9]*" inputmode="numeric" value="{{$pj['fuer']}}" style="text-align: center" class="form-control bg-light" placeholder="">
                         <div class="input-group-append">
                             <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-light" type="button">
                                 <strong>+</strong>
@@ -308,7 +308,7 @@
                                 <strong>-</strong>
                             </button>
                         </div>
-                        <input type="text"  value="{{$pj['fuer']}}" style="text-align: center" class="form-control bg-light" placeholder="">
+                        <input type="text" pattern="[0-9]*" inputmode="numeric" value="{{$pj['fuer']}}" style="text-align: center" class="form-control bg-light" placeholder="">
                         <div class="input-group-append">
                             <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-light" type="button">
                                 <strong>+</strong>
@@ -328,7 +328,7 @@
                                 <strong>-</strong>
                             </button>
                         </div>
-                        <input type="text"  value="{{$pj['fuer']}}" style="text-align: center" class="form-control bg-light" placeholder="">
+                        <input type="text" pattern="[0-9]*" inputmode="numeric" value="{{$pj['fuer']}}" style="text-align: center" class="form-control bg-light" placeholder="">
                         <div class="input-group-append">
                             <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-light" type="button">
                                 <strong>+</strong>
@@ -353,7 +353,7 @@
                                 <strong>-</strong>
                             </button>
                         </div>
-                        <input type="text"  value="{{$pj['fuer']}}" style="text-align: center" class="form-control bg-light" placeholder="">
+                        <input type="text" pattern="[0-9]*" inputmode="numeric" value="{{$pj['fuer']}}" style="text-align: center" class="form-control bg-light" placeholder="">
                         <div class="input-group-append">
                             <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-light" type="button">
                                 <strong>+</strong>
@@ -371,7 +371,7 @@
                                 <strong>-</strong>
                             </button>
                         </div>
-                        <input type="text"  value="{{$pj['fuer']}}" style="text-align: center" class="form-control bg-light" placeholder="">
+                        <input type="text" pattern="[0-9]*" inputmode="numeric" value="{{$pj['fuer']}}" style="text-align: center" class="form-control bg-light" placeholder="">
                         <div class="input-group-append">
                             <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-light" type="button">
                                 <strong>+</strong>
@@ -391,7 +391,7 @@
                                 <strong>-</strong>
                             </button>
                         </div>
-                        <input type="text"  value="{{$pj['fuer']}}" style="text-align: center" class="form-control bg-light" placeholder="">
+                        <input type="text" pattern="[0-9]*" inputmode="numeric" value="{{$pj['fuer']}}" style="text-align: center" class="form-control bg-light" placeholder="">
                         <div class="input-group-append">
                             <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-light" type="button">
                                 <strong>+</strong>
@@ -409,7 +409,7 @@
                                 <strong>-</strong>
                             </button>
                         </div>
-                        <input type="text"  value="{{$pj['fuer']}}" style="text-align: center" class="form-control bg-light" placeholder="">
+                        <input type="text" pattern="[0-9]*" inputmode="numeric" value="{{$pj['fuer']}}" style="text-align: center" class="form-control bg-light" placeholder="">
                         <div class="input-group-append">
                             <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-light" type="button">
                                 <strong>+</strong>
@@ -430,7 +430,7 @@
                                 <strong>-</strong>
                             </button>
                         </div>
-                        <input type="text"  value="{{$pj['fuer']}}" style="text-align: center" class="form-control bg-light" placeholder="">
+                        <input type="text" pattern="[0-9]*" inputmode="numeric" value="{{$pj['fuer']}}" style="text-align: center" class="form-control bg-light" placeholder="">
                         <div class="input-group-append">
                             <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-light" type="button">
                                 <strong>+</strong>
@@ -448,7 +448,7 @@
                                 <strong>-</strong>
                             </button>
                         </div>
-                        <input type="text"  value="{{$pj['fuer']}}" style="text-align: center" class="form-control bg-light" placeholder="">
+                        <input type="text" pattern="[0-9]*" inputmode="numeric" value="{{$pj['fuer']}}" style="text-align: center" class="form-control bg-light" placeholder="">
                         <div class="input-group-append">
                             <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-light" type="button">
                                 <strong>+</strong>

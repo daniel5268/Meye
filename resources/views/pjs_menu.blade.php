@@ -33,7 +33,7 @@
                         <strong>-</strong>
                     </button>
                 </div>
-                <input type="text"  value="0" style="text-align: center" class="form-control bg-light h-100" name="edad">
+                <input type="text" pattern="[0-9]*" inputmode="numeric" value="0" style="text-align: center" class="form-control bg-light h-100" name="edad">
                 <div class="input-group-append">
                     <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-light" type="button">
                         <strong>+</strong>
@@ -60,7 +60,7 @@
                             <strong>-</strong>
                         </button>
                     </div>
-                    <input type="text"  value="{{$pj['edad']}}" style="text-align: center" class="form-control bg-light" name="edad">
+                    <input type="text" pattern="[0-9]*" inputmode="numeric" value="{{$pj['edad']}}" style="text-align: center" class="form-control bg-light" name="edad">
                     <div class="input-group-append">
                         <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-light" type="button">
                             <strong>+</strong>
@@ -78,7 +78,7 @@
                             <strong>-</strong>
                         </button>
                     </div>
-                    <input type="text"  value="{{$pj['altura']}}" style="text-align: center" class="form-control bg-light" name="altura">
+                    <input type="text" pattern="[0-9]*" inputmode="numeric" value="{{$pj['altura']}}" style="text-align: center" class="form-control bg-light" name="altura">
                     <div class="input-group-append">
                         <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-light" type="button">
                             <strong>+</strong>
@@ -96,7 +96,7 @@
                             <strong>-</strong>
                         </button>
                     </div>
-                    <input type="text"  value="{{$pj['peso']}}" style="text-align: center" class="form-control bg-light" name="peso">
+                    <input type="text" pattern="[0-9]*" inputmode="numeric" value="{{$pj['peso']}}" style="text-align: center" class="form-control bg-light" name="peso">
                     <div class="input-group-append">
                         <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-light" type="button">
                             <strong>+</strong>
@@ -114,7 +114,7 @@
                             <strong>-</strong>
                         </button>
                     </div>
-                    <input type="text"  value="{{$pj['bolsa']}}" style="text-align: center" class="form-control bg-light" name="bolsa">
+                    <input type="text" pattern="[0-9]*" inputmode="numeric" value="{{$pj['bolsa']}}" style="text-align: center" class="form-control bg-light" name="bolsa">
                     <div class="input-group-append">
                         <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-light" type="button">
                             <strong>+</strong>
@@ -132,7 +132,7 @@
                             <strong>-</strong>
                         </button>
                     </div>
-                    <input type="text"  value="{{$pj['cordura']}}" style="text-align: center" class="form-control bg-light" name="cordura">
+                    <input type="text" pattern="[0-9]*" inputmode="numeric" value="{{$pj['cordura']}}" style="text-align: center" class="form-control bg-light" name="cordura">
                     <div class="input-group-append">
                         <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-light" type="button">
                             <strong>+</strong>
@@ -150,7 +150,7 @@
                             <strong>-</strong>
                         </button>
                     </div>
-                    <input type="text"  value="{{$pj['carisma']}}" style="text-align: center" class="form-control bg-light" name="carisma">
+                    <input type="text" pattern="[0-9]*" inputmode="numeric" value="{{$pj['carisma']}}" style="text-align: center" class="form-control bg-light" name="carisma">
                     <div class="input-group-append">
                         <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-light" type="button">
                             <strong>+</strong>
@@ -168,7 +168,7 @@
                             <strong>-</strong>
                         </button>
                     </div>
-                    <input type="text"  value="{{$pj['villania']}}" style="text-align: center" class="form-control bg-light" name="villania">
+                    <input type="text" pattern="[0-9]*" inputmode="numeric" value="{{$pj['villania']}}" style="text-align: center" class="form-control bg-light" name="villania">
                     <div class="input-group-append">
                         <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-light" type="button">
                             <strong>+</strong>
@@ -186,7 +186,7 @@
                             <strong>-</strong>
                         </button>
                     </div>
-                    <input type="text"  value="{{$pj['heroismo']}}" style="text-align: center" class="form-control bg-light" name="heroismo">
+                    <input type="text" pattern="[0-9]*" inputmode="numeric" value="{{$pj['heroismo']}}" style="text-align: center" class="form-control bg-light" name="heroismo">
                     <div class="input-group-append">
                         <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-light" type="button">
                             <strong>+</strong>
@@ -204,7 +204,7 @@
                             <strong>-</strong>
                         </button>
                     </div>
-                    <input type="text"  value="{{$pj['apariencia']}}" style="text-align: center" class="form-control bg-light" name="apariencia">
+                    <input type="text" pattern="[0-9]*" inputmode="numeric" value="{{$pj['apariencia']}}" style="text-align: center" class="form-control bg-light" name="apariencia">
                     <div class="input-group-append">
                         <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-light" type="button">
                             <strong>+</strong>

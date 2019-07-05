@@ -22,22 +22,22 @@ class ProfileController extends Controller
     }
     public function createPj(Request $request)
     {
-    	$types = PjRepo::getPossibleTypes();
-        $strength1 = PjRepo::getPossibleStrength1();
-        $strength2 = PjRepo::getPossibleStrength2();
         $validatedData = $request->validate([
 	        'nombre' => 'required',
             'tipo'   => ['required',function ($attribute, $value, $fail) {
+                    $types = PjRepo::getPossibleTypes();
                    if (!(in_array($value, $types))) {
                         $fail('Valor no permitido, Qué extraño');
                     } 
                 }],
             'fortaleza1'   => ['required',function ($attribute, $value, $fail) {
+                   $strength1 = PjRepo::getPossibleStrength1();
                    if (!(in_array($value, $strength1))) {
                         $fail('Valor no permitido, Qué extraño');
                     } 
                 }],
             'fortaleza2'   => ['required',function ($attribute, $value, $fail) {
+                   $strength2 = PjRepo::getPossibleStrength2();
                    if (!(in_array($value, $strength2))) {
                         $fail('Valor no permitido, Qué extraño');
                     } 
