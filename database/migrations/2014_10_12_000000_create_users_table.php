@@ -18,7 +18,6 @@ class CreateUsersTable extends Migration
             $table->string('username')->unique();
             $table->string('password');
             $table->string('type')->default('player');
-            $table->unsignedBigInteger('last')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

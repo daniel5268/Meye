@@ -23,14 +23,21 @@ Route::post('/register', 'Auth\RegisterController@register');
 
 Route::get('/appinit', 'BossController@init');
 
-Route::get('/password/reset', 'BossController@passwordResetForm')->name('passwordReset')->middleware('authWarning')->middleware('checkRole:admin');
+Route::get('/password-reset', 'BossController@passwordResetForm')->name('passwordReset')->middleware('authWarning')->middleware('checkRole:admin');
 
-Route::post('/password/reset', 'BossController@passwordReset')->middleware('authWarning')->middleware('checkRole:admin');
+Route::post('/password-reset', 'BossController@passwordReset')->middleware('authWarning')->middleware('checkRole:admin');
 
-Route::get('/password/update', 'UserController@passwordUpdateForm')->name('passwordUpdate')->middleware('authWarning');
+Route::get('/password-update', 'UserController@passwordUpdateForm')->name('passwordUpdate')->middleware('authWarning');
 
 
-Route::post('/password/update', 'UserController@passwordUpdate')->name('passwordUpdate');
+Route::post('/password-update', 'UserController@passwordUpdate')->name('passwordUpdate');
 
-Route::get('/pj/create', 'ProfileController@createPjForm')->name('createPj')->middleware('authWarning');
-Route::post('/pj/create', 'ProfileController@createPj')->name('createPj')->middleware('authWarning');
+Route::get('/pj-create', 'ProfileController@createPjForm')->name('createPj')->middleware('authWarning');
+Route::post('/pj-create', 'ProfileController@createPj')->name('createPj')->middleware('authWarning');
+
+Route::get('/pj-list', 'ProfileController@listPjs')->name('listPjs')->middleware('authWarning');
+
+Route::get('/pjs-manage', 'MasterController@managePjForm')->name('managePj')->middleware('authWarning')->middleware('checkRole:master');
+
+Route::post('/pjs-manage', 'MasterController@managePj')->name('managePj')->middleware('authWarning')->middleware('checkRole:master');
+

@@ -11127,6 +11127,11 @@ a.text-dark:focus {
 
 .nav-link:hover {
   background: rgba(255, 255, 255, 0.1);
+  color: #aaa !important;
+}
+
+.nav-link:active {
+  color: white !important;
 }
 
 .btn-link {
@@ -11137,6 +11142,36 @@ a.text-dark:focus {
 
 .btn-link:hover {
   text-decoration: none;
+  color: #aaa !important;
   background: rgba(255, 255, 255, 0.1);
+}
+
+.btn-link:active {
+  color: white !important;
+}
+
+.active a {
+  color: white !important;
+  font-weight: bold !important;
+}
+
+.active a:hover {
+  color: white !important;
+}
+
+.btn-outline-light {
+  background: rgba(0, 0, 0, 0.25) !important;
+}
+
+.btn-outline-light:hover {
+  color: #fff;
+  background: rgba(0, 0, 0, 0.05) !important;
+}
+
+.meye-label {
+  color: #fff;
+  border: solid 1px #4bc0c0;
+  border-bottom: none;
+  background: rgba(75, 192, 192, 0.2);
 }
 

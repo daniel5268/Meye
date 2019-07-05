@@ -10,12 +10,17 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
         <!-- Styles -->
         <link rel="stylesheet" href="/css/app.css">
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+
+        <script src="{{ asset('js/jquery.min.js') }}"></script>
+        <script src="{{ asset('js/canvasjs.min.js')}}"></script>
+        <script src="{{ asset('js/meye.js')}}"></script>
         
     </head>
     <body class="bg-secondary" >
         <header class="row">
             <div class="col">
-                <nav class="navbar navbar-expand-md navbar-dark bg-dark ">
+                <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
                     
                     <a class="navbar-brand" href="#">Meye Digital Assistant</a>
                     @if(!Auth::guest())                    
@@ -28,32 +33,32 @@
 
                         <div class="collapse navbar-collapse" id="navbar" >
                             <ul class="navbar-nav mr-auto d-lg-flex w-100 justify-content-between">
-                                <li class="nav-item active" >
-                                    <a href="{{route('createPj')}}" class="nav-link pl-2  mt-2 mt-md-0 ml-md-5 text-light">Crear Pj</a>
+                                <li class="nav-item" >
+                                    <a href="{{route('createPj')}}" class="nav-link meye-nav-link pl-2  mt-2 mt-lg-0 ml-lg-5 text-muted">Crear Pj</a>
                                 </li>
                                 <li class="nav-item" >
-                                    <a href="#" class="nav-link pl-2  text-light">Ver mis Pjs</a>
+                                    <a href="{{route('listPjs')}}" class="nav-link meye-nav-link pl-2 text-muted">Ver mis Pjs</a>
                                 </li>
                                 <li class="nav-item" >
-                                    <a href="#" class="nav-link pl-2  text-light">Visitar Pjs</a>
+                                    <a href="#" class="nav-link meye-nav-link pl-2 text-muted">Visitar Pjs</a>
                                 </li>
                                 @if(Auth::user()->type == 'admin')
                                     <li class="nav-item" >
-                                        <a href="{{route('passwordReset')}}" class="nav-link pl-2  text-light">Restablecer contraseñas</a>
+                                        <a href="{{route('passwordReset')}}" class="nav-link meye-nav-link pl-2 text-muted">Restablecer contraseñas</a>
                                     </li>
                                 @endif
                                 @if(Auth::user()->type == 'master')
                                     <li class="nav-item" >
-                                        <a href="#" class="nav-link pl-2  text-light">Asignar experiencia</a>
+                                        <a href="{{route('managePj')}}" class="nav-link meye-nav-link pl-2 text-muted">Gestionar Pjs</a>
                                     </li>                                
                                 @endif
                                 <li class="nav-item" >
-                                    <a href="{{route('passwordUpdate')}}" class="nav-link pl-2  text-light">Cambiar contraseña</a>
+                                    <a href="{{route('passwordUpdate')}}" class="nav-link meye-nav-link pl-2 text-muted">Cambiar contraseña</a>
                                 </li>
                                 <li class="nav-item" >
                                     <form method="POST" action="{{ route('logout') }}">
                                         @csrf
-                                        <button class="btn btn-link text-left text-light mr-auto" type="submit">Salir</button>
+                                        <button class="btn btn-link text-left text-muted mr-auto" type="submit">Salir</button>
                                     </form>
                                 </li>
                             </ul>
@@ -81,6 +86,6 @@
             @yield('content')
         </div>
         <!-- Scripts -->
-        <script src="/js/app.js"></script>
+        <script src="/js/app.js"></script>x
     </body>
 </html>

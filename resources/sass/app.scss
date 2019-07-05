@@ -28,6 +28,10 @@
 	transition: 0.3s;
 	&:hover{
 		background: rgba(255,255,255,.1);
+		color: $lightGrey !important;
+	}
+	&:active{
+		color: white !important;	
 	}
 }
 
@@ -37,6 +41,34 @@
 	width: 100%;
 	&:hover{
 		text-decoration: none;
+		color: $lightGrey !important;
 		background: rgba(255,255,255,.1);
 	}
+	&:active{
+		color: white !important;	
+	}
+}
+
+.active a{
+	color: white !important;
+ 	font-weight: bold  !important;
+ 	&:hover{
+ 		color: white !important;
+ 	}
+}
+
+.btn-outline-light {
+	background: rgba(0, 0, 0, 0.25) !important;
+	&:hover{
+		color: #fff;
+		background: rgba(0, 0, 0, 0.05) !important;
+	}
+}
+
+.meye-label{
+	color: #fff;
+	border: solid 1px rgb(75,192,192);
+	border-bottom: none;
+	background: rgba(75, 192, 192, 0.2);
+	
 }
