@@ -15,6 +15,37 @@
         </div>        
     </div>
     @foreach ($pjs as $key => $pj)
+    <div class="pj-div row justify-content-center justify-content-md-between mb-3" id="{{$key}}">
+        <form method="POST" class="d-flex justify-content-center" action="{{ route('managePj') }}">
+        @csrf            
+            <div class="col-auto d-flex justify-content-center align-items-center">
+                <select class="form-control text-center" id="type-select">
+                    @foreach ($pj['xpTypes'] as $type)
+                        <option value="{{$type}}" id="{{$type}}">
+                            {{$type}}
+                        </option>
+                    @endforeach                    
+                </select>
+            </div>
+            <div class ="input-group  col align-items-center">
+                <div class="input-group-prepend">
+                    <button style="min-width: 2.5rem" class="btn btn-decrement btn-outline-light" type="button">
+                        <strong>-</strong>
+                    </button>
+                </div>
+                <input type="text"  value="0" style="text-align: center" class="form-control bg-light h-100" name="edad">
+                <div class="input-group-append">
+                    <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-light" type="button">
+                        <strong>+</strong>
+                    </button>
+                </div>
+            </div>
+            <div class="col-auto">
+                <button type="submit" class="btn mx-auto text-light meye-btn-green"> Asignar </button>
+            </div>
+            
+        </form>
+    </div>
     <form method="POST" action="{{ route('managePj') }}">
         @csrf
         <input type="hidden" value="{{$key}}" name="id">
@@ -199,7 +230,7 @@
             </div>
             <div class="col-12 d-flex justify-content-center">
                 @csrf
-                <button type="submit" class="btn mt-3 mx-auto text-light meye-btn-blue">
+                <button type="submit" class="btn my-3 mx-auto text-light meye-btn-green">
                     {{ __('Guardar') }}
                 </button>
             </div>            

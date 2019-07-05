@@ -8,33 +8,37 @@ use Illuminate\Support\Facades\Auth;
 
 class ProfileController extends Controller
 {
-    private $types = ['Humano','Soko','Bestia'];
-    public $strength1 = ['Físico','Mental','Coordinación','Energía'];
-    public $strength2 = ['H. Corporales','H. Mentales','H. Energía'];
     public function createPjForm()
     {
-    	return view('create_pj')->with([
-    		'tipos' => $this->types,
-    		'fortaleza1' => $this->strength1,
-    		'fortaleza2' => $this->strength2,
-    	]);
+    	$types = PjRepo::getPossibleTypes();
+        $strength1 = PjRepo::getPossibleStrength1();
+        $strength2 = PjRepo::getPossibleStrength2();
+        $data = [
+            'tipos' => $types,
+            'fortaleza1' => $strength1,
+            'fortaleza2' => $strength2
+        ];
+        return view('create_pj')->with($data);
     }
     public function createPj(Request $request)
     {
-    	$validatedData = $request->validate([
+    	$types = PjRepo::getPossibleTypes();
+        $strength1 = PjRepo::getPossibleStrength1();
+        $strength2 = PjRepo::getPossibleStrength2();
+        $validatedData = $request->validate([
 	        'nombre' => 'required',
             'tipo'   => ['required',function ($attribute, $value, $fail) {
-                   if (!(in_array($value, $this->types))) {
+                   if (!(in_array($value, $types))) {
                         $fail('Valor no permitido, Qué extraño');
                     } 
                 }],
             'fortaleza1'   => ['required',function ($attribute, $value, $fail) {
-                   if (!(in_array($value, $this->strength1))) {
+                   if (!(in_array($value, $strength1))) {
                         $fail('Valor no permitido, Qué extraño');
                     } 
                 }],
             'fortaleza2'   => ['required',function ($attribute, $value, $fail) {
-                   if (!(in_array($value, $this->strength2))) {
+                   if (!(in_array($value, $strength2))) {
                         $fail('Valor no permitido, Qué extraño');
                     } 
                 }],

@@ -45,4 +45,25 @@ class PjRepo extends Model
 		$pj->commerce=array_key_exists('commerce', $data);
 		$pj->save();		
 	}
+	public static function getPossibleTypes(){
+		return ['Humano','Soko','Bestia'];
+	}
+	public static function getPossibleStrength1(){
+		return ['Físico','Mental','Coordinación','Energía'];
+	}
+	public static function getPossibleStrength2(){
+		return ['H. Corporales','H. Mentales','H. Energía'];
+	}
+
+	public static function getPossibleXpTypes($type){
+		if (($type == 'Humano')||($type == 'Bestia')){
+			return ['Tipo 1','Tipo 2'];
+		}
+		if($type=='Soko'){
+			return ['Tipo 1','Tipo 2','Tipo 3'];
+		}else{
+			dd('getPossibleXpTypes($type) where $type',$type);
+		}
+	}
+	
 }

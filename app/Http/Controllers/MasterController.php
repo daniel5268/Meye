@@ -25,9 +25,10 @@ class MasterController extends Controller
         	$data[$pj->id]['villania'] = $pj->villania;
         	$data[$pj->id]['heroismo'] = $pj->heroismo;
         	$data[$pj->id]['apariencia'] = $pj->apariencia;
+        	$data[$pj->id]['xpTypes'] = PjRepo::getPossibleXpTypes($pj->tipo);
         }
         return view('pjs_menu')->with([
-                'pjs' => $data
+                'pjs' => $data,
             ]);
     }
     function managePj(Request $request){
