@@ -41,3 +41,4 @@ Route::get('/pjs-manage', 'MasterController@managePjForm')->name('managePj')->mi
 
 Route::post('/pjs-manage', 'MasterController@managePj')->name('managePj')->middleware('authWarning')->middleware('checkRole:master');
 
+Route::post('/assignation', 'MasterController@assignation')->name('giveXp')->middleware('authWarning')->middleware('checkRole:master');

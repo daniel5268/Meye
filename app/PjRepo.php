@@ -55,15 +55,38 @@ class PjRepo extends Model
 		return ['H. Corporales','H. Mentales','H. Energía'];
 	}
 
-	public static function getPossibleXpTypes($type){
+	public static function getPossibleAssignationTypes($type){
 		if (($type == 'Humano')||($type == 'Bestia')){
-			return ['Tipo 1','Tipo 2'];
+			return ['Tipo 1','Tipo 2','Renels'];
 		}
 		if($type=='Soko'){
-			return ['Tipo 1','Tipo 2','Tipo 3'];
+			return ['Tipo 1','Tipo 2','Tipo 3','Renels'];
 		}else{
 			dd('getPossibleXpTypes($type) where $type',$type);
 		}
+	}
+	public static function assignation($data)
+	{
+		$pj = Pj::query()->where('id','=',$data['id'])->first();
+		switch ($data['type']) {
+			case 'Tipo 1':
+				$pj->xp1 = $pj->xp1 +$data['amount'];
+				break;
+			case 'Tipo 2':
+				$pj->xp2 = $pj->xp2 +$data['amount'];
+				break;
+			case 'Tipo 3':
+				$pj->xp3 = $pj->xp3 +$data['amount'];
+				# code...
+				break;
+			case 'Renels':
+				$pj->renels = $pj->renels +$data['amount'];
+				break;
+			default:
+				dd("in assignation PjRepo type ",$data['type']);
+				break;
+		}
+		$pj->save();
 	}
 	
 }

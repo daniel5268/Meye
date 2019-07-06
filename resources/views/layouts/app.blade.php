@@ -13,8 +13,8 @@
         <link rel="stylesheet" href="css/font-awesome.min.css">
 
         <script src="{{ asset('js/jquery.min.js') }}"></script>
-        <script src="{{ asset('js/canvasjs.min.js')}}"></script>
-        <script src="{{ asset('js/meye.js')}}"></script>
+        
+    
         
     </head>
     <body class="bg-secondary" >

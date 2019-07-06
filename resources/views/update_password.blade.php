@@ -36,7 +36,7 @@
             </div>
 
             <div class="row justify-content-center">
-                <div class="col col-sm-4 col-md-3 ">
+                <div class="col col-sm-8 col-md-3 ">
                     @csrf
                     <button type="submit" class="btn text-light btn-block meye-btn-green">
                         {{ __('Cambiar contraseña') }}

@@ -61,19 +61,22 @@ class ProfileController extends Controller
             $data[$pj->id] = [];
             $data[$pj->id]['nombre'] = $pj->nombre;
             $data[$pj->id]['tipo'] = $pj->tipo;
-            $data[$pj->id]['edad'] = $pj->edad ;
+            $data[$pj->id]['edad'] = $pj->edad;
             // Comportamiento
             $data[$pj->id]['cordura'] = $pj->cordura;
-            $data[$pj->id]['carisma'] = 7;
-            $data[$pj->id]['villania'] = 5;
-            $data[$pj->id]['heroismo'] = 3;
+            $data[$pj->id]['carisma'] = $pj->carisma;
+            $data[$pj->id]['villania'] = $pj->villania;
+            $data[$pj->id]['heroismo'] = $pj->heroismo;
             //visual
             $data[$pj->id]['peso'] = $pj->peso;
             $data[$pj->id]['altura'] = $pj->altura;
-            $data[$pj->id]['apariencia'] = 8;
-            
-            $data[$pj->id]['fortaleza1'] = $pj->fortaleza1;
-            $data[$pj->id]['fortaleza2'] = $pj->fortaleza2;
+            $data[$pj->id]['apariencia'] = $pj->apariencia;
+            $f1 = str_replace('ó','o',str_replace('í', 'i', $pj->fortaleza1));
+            $f2 = str_replace(' ', '-', $pj->fortaleza2);
+            $f2 = str_replace('.', '', $f2);
+            $f2 = str_replace('í', 'i', $f2);
+            $data[$pj->id]['fortaleza1'] = $f1;
+            $data[$pj->id]['fortaleza2'] = $f2;
             $data[$pj->id]['description'] = $pj->description;
             $data[$pj->id]['bolsa'] = $pj->bolsa;
             $data[$pj->id]['vida'] = $pj->vida;

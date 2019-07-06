@@ -188,3 +188,102 @@ $('.apar').each( function () {
 	}
 	var myChart = new Chart(ctxP, conf);	
 });
+
+var url = window.location.pathname;
+var activePage = url.substring(url.lastIndexOf('/') + 1); 
+$('.meye-nav-link').each(function(){
+	var linkPage = this.href.substring(this.href.lastIndexOf('/') + 1);
+	if (activePage == linkPage) {
+        $(this).closest("li").addClass("active"); 
+    }
+});
+$('.btn-increment').click(function (){
+	$input = $( this ).closest('.input-group').children('input');
+	$prev = parseInt($input.val(), 10);
+	$input.attr('value',$prev+1 ).change();
+});
+
+$('.btn-decrement').click(function (){
+	$input = $( this ).closest('.input-group').children('input');
+	$prev = parseInt($input.val(), 10);
+	if ($prev>=1){
+		$input.attr('value',$prev-1 ).change();
+	}
+});
+
+$('#pj-select').each(function(){
+	$selected = $(this).val();
+	$('.pj-div').each(function(){
+		if (( $(this).attr('id')) == $selected){
+			$(this).removeClass('d-none');
+		}else{
+			$(this).addClass('d-none');
+		}
+	});
+});	
+
+$('#pj-select').change(function(){
+	$selected = $(this).val();
+	$('.pj-div').each(function(){
+		if (( $(this).attr('id')) == $selected){
+			$(this).removeClass('d-none');
+		}else{
+			$(this).addClass('d-none');
+		}
+	});
+});
+
+
+$.fn.calcDiv = function (){
+	var xpDiv = $(this);
+	var fis = xpDiv.hasClass('Fisico');
+	var men = xpDiv.hasClass('Mental');
+	var coor = xpDiv.hasClass('Coordinacion');
+	var ener = xpDiv.hasClass('Energia');
+	var Hcor = xpDiv.hasClass('H-Corporales');
+	var Hener = xpDiv.hasClass('H-Energia');
+	var Hment = xpDiv.hasClass('H-Mentales');
+	var str = 0;
+	var weak = 0;
+	var vita = 0;
+	var data = xpDiv.find('.fis');
+	data.find('input').each(function(){
+		if (fis){
+			str = str+parseInt($(this).val());
+		}else{
+			weak = weak+parseInt($(this).val());
+		}		
+	});
+	data = xpDiv.find('.men');
+	data.find('input').each(function(){
+		if (men){
+			str = str+parseInt($(this).val());
+		}else{
+			weak = weak+parseInt($(this).val());
+		}		
+	});
+	
+	data = xpDiv.find('.coor');
+	data.find('input').each(function(){
+		if (coor){
+			str = str+parseInt($(this).val());
+		}else{
+			weak = weak+parseInt($(this).val());
+		}		
+	});
+	data = xpDiv.find('.life');
+	data.find('input').each(function(){
+		vita = parseInt($(this).val());
+	});
+	$('#sum1')
+
+};
+$('.xp-calc-div').calcDiv();
+
+$('.t1-data').change(function (){
+	$( this ).closest('.xp-calc-div').calcDiv();
+});
+
+
+
+

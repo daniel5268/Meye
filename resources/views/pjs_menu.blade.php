@@ -7,19 +7,24 @@
         <div class="col-xs-10 col-sm-8 col-md-6 d-flex justify-content-center align-items-center">
             <select class="form-control text-center" id="pj-select">
                 @foreach ($pjs as $key => $pj)
-                    <option value="{{$key}}" id="{{$key}}">
+                    <option value="{{$key}}" id="{{$key}}"
+                        @if(Session::get('last')==$key)
+                            selected="" 
+                        @endif
+                    >
                         {{$pj['nombre']}}
                     </option>
-                @endforeach                    
+                @endforeach
             </select>
         </div>        
     </div>
     @foreach ($pjs as $key => $pj)
     <div class="pj-div row justify-content-center justify-content-md-between mb-3" id="{{$key}}">
-        <form method="POST" class="d-flex justify-content-center" action="{{ route('managePj') }}">
-        @csrf            
+        <form method="POST" class="d-flex justify-content-center" action="{{ route('giveXp') }}">
+        @csrf
+            <input type="hidden" name="id" value="{{$key}}">
             <div class="col-auto d-flex justify-content-center align-items-center">
-                <select class="form-control text-center" id="type-select">
+                <select class="form-control text-center" name="type" id="type-select">
                     @foreach ($pj['xpTypes'] as $type)
                         <option value="{{$type}}" id="{{$type}}">
                             {{$type}}
@@ -33,7 +38,7 @@
                         <strong>-</strong>
                     </button>
                 </div>
-                <input type="text" pattern="[0-9]*" inputmode="numeric" value="0" style="text-align: center" class="form-control bg-light h-100" name="edad">
+                <input type="text" pattern="[0-9]*" inputmode="numeric" value="0" style="text-align: center" class="form-control bg-light h-100" name="amount">
                 <div class="input-group-append">
                     <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-light" type="button">
                         <strong>+</strong>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\PjRepo;
+use App\AssignationRepo;
 
 class MasterController extends Controller
 {
@@ -25,7 +26,7 @@ class MasterController extends Controller
         	$data[$pj->id]['villania'] = $pj->villania;
         	$data[$pj->id]['heroismo'] = $pj->heroismo;
         	$data[$pj->id]['apariencia'] = $pj->apariencia;
-        	$data[$pj->id]['xpTypes'] = PjRepo::getPossibleXpTypes($pj->tipo);
+        	$data[$pj->id]['xpTypes'] = PjRepo::getPossibleAssignationTypes($pj->tipo);
         }
         return view('pjs_menu')->with([
                 'pjs' => $data,
@@ -34,6 +35,14 @@ class MasterController extends Controller
     function managePj(Request $request){
     	$data=$request->all();
     	PjRepo::modify($data);
-    	return redirect()->route('managePj')->with('message','Pj modificado con éxito');
+    	return redirect()->route('managePj')->with(['message'=>'Pj modificado con éxito','last'=>$data['id']]);
+    }
+
+    public function assignation(Request $request)
+    {
+        $data=$request->all();
+        PjRepo::assignation($data);
+        
+        return redirect()->back()->with(['message'=>'Asignación realizada con éxito','last'=>$data['id']]);
     }
 }

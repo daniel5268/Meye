@@ -41,6 +41,10 @@ class CreatePjsTable extends Migration
             
             //--- reservas
             $table->integer('vida')->default(0);
+            $table->integer('renels')->default(0);
+            $table->integer('xp1')->default(0);
+            $table->integer('xp2')->default(0);
+            $table->integer('xp3')->default(0);
             $table->integer('ener')->default(0);
             $table->integer('ener2')->default(0);
             
