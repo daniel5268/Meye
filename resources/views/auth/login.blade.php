@@ -38,19 +38,23 @@
                     </label>
                 </div>                
             </div>
-            <div class="col col-sm-4 col-md-3 mx-auto mb-3">
-                <button type="submit" class="btn  text-light btn-block meye-btn-green">
-                    {{ __('Ingresar') }}
-                </button>
+            <div class="row justify-content-center">
+                <div class="col-12 col-sm-4 col-md-3 mx-auto mx-sm-0 mb-3 offset-sm-2">
+                    <button type="submit" class="btn  text-light btn-block meye-btn-green">
+                        {{ __('Ingresar') }}
+                    </button>
+                </div>
+                <div class="col-12 col-sm-4 col-md-3 mx-auto mx-sm-0 mb-3">
+                    <button type="button" id="register-button" class="btn text-light btn-block meye-btn-blue">
+                        {{ __('Registrarse') }}
+                    </button>
+                </div>
             </div>
         </form>
                 
         <div class="col col-sm-4 col-md-3 mx-auto">
-            <form method="GET" action="{{ route('register') }}">
+            <form method="GET" id="register-form" action="{{ route('register') }}">
                 @csrf
-                <button type="submit" class="btn text-light btn-block meye-btn-blue">
-                    {{ __('Registrarse') }}
-                </button>
             </form>
         </div>
     </div>

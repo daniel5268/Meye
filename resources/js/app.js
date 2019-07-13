@@ -28,6 +28,10 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
+$('#register-button').click(function (){
+	$('#register-form').submit();
+});
+
 const app = new Vue({
     el: '#app',
 });
