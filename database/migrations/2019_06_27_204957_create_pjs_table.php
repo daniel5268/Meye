@@ -18,6 +18,7 @@ class CreatePjsTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
 
+            //--- general
             $table->string('nombre');
             $table->string('tipo');
             $table->string('fortaleza1');

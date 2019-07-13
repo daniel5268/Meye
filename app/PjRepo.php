@@ -88,5 +88,67 @@ class PjRepo extends Model
 		}
 		$pj->save();
 	}
+
+	public static function updatePj($data)
+	{
+		Pj::where('id', $data['id'])->update($data);
+	}
 	
+	public static function findById($id)
+	{
+		return Pj::query()->where('id','=',$id)->first();
+	}
+
+	public static function getT1Keys(){
+		return ['fuer','velo','agil','resi','inte','sabi','conc','volu','prec','calc','rang','refl','vida'];
+	}
+
+	public static function getT2Keys(){
+		return ['pote','vita','obje','pura','ment','iluc','ener','ener2'];
+	}
+
+	public static function getT1SrengthKeys($strengh)
+	{
+		switch ($strengh) {
+			case 'Físico':
+				return ['fuer','velo','agil','resi'];
+			case 'Mental':
+				return ['inte','sabi','conc','volu'];
+			case 'Coordinación':
+				return ['prec','calc','rang','refl'];
+			case 'Energía':
+				return [];
+				
+				
+			
+			default:
+				dd('in PjRepo::getT1SrengthKeys strenght not defined',$strenght);
+				break;
+		}
+	}
+	
+
+	
+	public static function getSpent($pj)
+	{
+		$keys = self::getT1Keys();
+		$keys = \array_diff($keys, ['vida']);
+		$strenghtKeys = self::getT1SrengthKeys($pj['fortaleza1']);
+
+		$spent['1'] = 0;
+		foreach ($keys as $key){
+			$d = intdiv($pj[$key],10);
+			$u = $pj[$key]%10;
+			if (in_array($key,$strenghtKeys)){
+				$spent['1'] += ((5*$d*$d)+(5*$d)+($u*$d)+$u);
+			}else{
+				$d+=2;
+				$spent['1'] += ((5*$d*$d)+(5*$d)+($u*$d)+$u)-30;
+			}
+		}
+		$spent['1']+= $pj['vida']*5;
+		dd($spent);
+		
+
+	}
 }

@@ -4,7 +4,7 @@
 
 <div class="row meye-form">
     <div class="col-12 py-4">
-        <form method="POST" action="{{ route('createPj') }}">
+        <form method="POST">
             @csrf
 
             <div class="form-group row justify-content-center">                

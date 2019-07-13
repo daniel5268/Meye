@@ -104,11 +104,27 @@ class ProfileController extends Controller
             $data[$pj->id]['hs2'] = $pj->hs2;
             $data[$pj->id]['hs3'] = $pj->hs3;
             $data[$pj->id]['hs4'] = $pj->hs4;
-
+            
+            $data[$pj->id]['renels'] = $pj->renels;
+            $data[$pj->id]['xp1'] = $pj->xp1;
+            $data[$pj->id]['xp2'] = $pj->xp2;
+            $data[$pj->id]['xp3'] = $pj->xp3;
         }
         return view('list_pjs')->with([
                 'pjs' => $data
             ]);
 
+    }
+    public function updatePj(Request $request)
+    {        
+        $data = $request->all();
+        $id = $data['id'];
+        unset($data['_token']);
+        $pj = PjRepo::findById($id);
+        $data['fortaleza1']=$pj->fortaleza1;
+        $data['fortaleza2']=$pj->fortaleza2;
+        $spent = PjRepo::getSpent($data);
+        PjRepo::updatePj($data); 
+        return redirect()->back()->with(['message'=>'Pj modificado con éxito','last'=>$id]);
     }
 }

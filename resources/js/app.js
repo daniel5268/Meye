@@ -211,79 +211,158 @@ $('.btn-decrement').click(function (){
 	}
 });
 
-$('#pj-select').each(function(){
-	$selected = $(this).val();
-	$('.pj-div').each(function(){
-		if (( $(this).attr('id')) == $selected){
-			$(this).removeClass('d-none');
-		}else{
-			$(this).addClass('d-none');
-		}
-	});
-});	
 
-$('#pj-select').change(function(){
-	$selected = $(this).val();
-	$('.pj-div').each(function(){
-		if (( $(this).attr('id')) == $selected){
-			$(this).removeClass('d-none');
-		}else{
-			$(this).addClass('d-none');
-		}
-	});
-});
+
 
 
 $.fn.calcDiv = function (){
-	var xpDiv = $(this);
-	var fis = xpDiv.hasClass('Fisico');
-	var men = xpDiv.hasClass('Mental');
-	var coor = xpDiv.hasClass('Coordinacion');
-	var ener = xpDiv.hasClass('Energia');
-	var Hcor = xpDiv.hasClass('H-Corporales');
-	var Hener = xpDiv.hasClass('H-Energia');
-	var Hment = xpDiv.hasClass('H-Mentales');
-	var str = 0;
-	var weak = 0;
-	var vita = 0;
-	var data = xpDiv.find('.fis');
+	console.log("entra");
+	var fis = selected.hasClass('Fisico');
+	var men = selected.hasClass('Mental');
+	var coor = selected.hasClass('Coordinacion');
+	var ener = selected.hasClass('Energia');
+	var Hcor = selected.hasClass('H-Corporales');
+	var Hener = selected.hasClass('H-Energia');
+	var Hment = selected.hasClass('H-Mentales');
+	var cost1 = 0;
+	var cost2 = 0;
+	var cost3 = 0;
+	var data = selected.find('.fis');
+	var d,u;
+	var val;
 	data.find('input').each(function(){
+		val = parseInt($(this).val());
+		d = Math.floor(val/10);
+		u = val%10;
 		if (fis){
-			str = str+parseInt($(this).val());
+			cost1 += ((5*d*d)+(5*d)+(u*d)+u);
 		}else{
-			weak = weak+parseInt($(this).val());
-		}		
+			d+=2;
+			cost1 += ((5*d*d)+(5*d)+(u*d)+u)-30;
+		}
 	});
-	data = xpDiv.find('.men');
+	data = selected.find('.men');
 	data.find('input').each(function(){
+		val = parseInt($(this).val());
+		d = Math.floor(val/10);
+		u = val%10;
 		if (men){
-			str = str+parseInt($(this).val());
+			cost1 += ((5*d*d)+(5*d)+(u*d)+u);
 		}else{
-			weak = weak+parseInt($(this).val());
-		}		
+			d+=2;
+			cost1 += ((5*d*d)+(5*d)+(u*d)+u)-30;
+		}
 	});
 	
-	data = xpDiv.find('.coor');
+	data = selected.find('.coor');
+
 	data.find('input').each(function(){
+
+		val = parseInt($(this).val());
+		d = Math.floor(val/10);
+		u = val%10;
 		if (coor){
-			str = str+parseInt($(this).val());
+			cost1 += ((5*d*d)+(5*d)+(u*d)+u);
 		}else{
-			weak = weak+parseInt($(this).val());
-		}		
+			d+=2;
+			cost1 += ((5*d*d)+(5*d)+(u*d)+u)-30;
+		}
 	});
-	data = xpDiv.find('.life');
+	data = selected.find('.life');
+	
 	data.find('input').each(function(){
-		vita = parseInt($(this).val());
+		cost1 += parseInt($(this).val())*5;
 	});
-	$('#sum1')
+
+	//CALCULO TIPO 2
+	data = selected.find('.Hcorp');
+	val = 0;
+	data.find('input').each(function(){
+		val += parseInt($(this).val());
+	});
+	d = Math.floor(val/100);
+	u = val%100;
+	if (Hcor){
+		cost2 += ((50*d*d)+(50*d)+(u*d)+u);
+
+	}else{
+		d+=1;
+		cost2 += ((50*d*d)+(50*d)+(u*d)+u)-100;
+	}
+	data = selected.find('.Hment');
+	val = 0;
+	data.find('input').each(function(){
+		val += parseInt($(this).val());
+	});
+	d = Math.floor(val/100);
+	u = val%100;
+	if (Hment){
+		cost2 += ((50*d*d)+(50*d)+(u*d)+u);
+
+	}else{
+		d+=1;
+		cost2 += ((50*d*d)+(50*d)+(u*d)+u)-100;
+	}
+	data = selected.find('.Hener');
+	val = 0;
+	data.find('input').each(function(){
+		val += parseInt($(this).val());
+	});
+	d = Math.floor(val/100);
+	u = val%100;
+	if (Hener){
+		cost2 += ((50*d*d)+(50*d)+(u*d)+u);
+
+	}else{
+		d+=1;
+		cost2 += ((50*d*d)+(50*d)+(u*d)+u)-100;
+	}
+	data = selected.find('.ener');
+	val=0;
+	data.find('input').each(function(){
+		val += parseInt($(this).val());
+	});
+	if(ener){
+		cost2 += (val*5);
+	}else{
+		cost2 += (val*10);
+	}
+	
+	
+	selected.find('.t1-val').text(cost1);
+	selected.find('.t2-val').text(cost2);
+	console.log('sale');
 
 };
-$('.xp-calc-div').calcDiv();
 
-$('.t1-data').change(function (){
-	$( this ).closest('.xp-calc-div').calcDiv();
+var selected;
+
+$('#pj-select').each(function(){
+	var val = $(this).val();
+	$('.pj-div').each(function(){
+		if (( $(this).attr('id')) == val){
+			$(this).removeClass('d-none');
+			selected = $(this);
+			selected.calcDiv();
+		}else{
+			$(this).addClass('d-none');
+		}
+	});
 });
 
+$('#pj-select').change(function(){
+	var val = $(this).val();
+	$('.pj-div').each(function(){
+		if (( $(this).attr('id')) == val){
+			$(this).removeClass('d-none');
+			selected = $(this);
+			selected.calcDiv();
+		}else{
+			$(this).addClass('d-none');
+		}
+	});
+});
 
-
-
+$('.data').change(function (){
+	selected.calcDiv();
+});

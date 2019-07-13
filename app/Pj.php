@@ -11,8 +11,8 @@ class Pj extends Model
      *
      * @var array
      */
-    protected $fillable = [
-        'nombre', 'tipo','fortaleza1','fortaleza2','description',
+    protected $guarded = [
+        'id', 'user_id'
     ];
 
     /**
