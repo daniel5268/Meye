@@ -10718,3 +10718,8 @@ a.text-dark:focus {
   background: rgba(75, 192, 192, 0.2);
 }
 
+.meye-calc-value {
+  color: #fff;
+  background: rgba(0, 0, 0, 0.8);
+}
+

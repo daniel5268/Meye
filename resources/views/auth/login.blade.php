@@ -51,12 +51,9 @@
                 </div>
             </div>
         </form>
-                
-        <div class="col col-sm-4 col-md-3 mx-auto">
-            <form method="GET" id="register-form" action="{{ route('register') }}">
-                @csrf
-            </form>
-        </div>
+        <form method="GET" id="register-form" action="{{ route('register') }}">
+            @csrf
+        </form>
     </div>
 </div>
 @endsection
