@@ -77,7 +77,7 @@
                                 <i class="fa fa-minus"></i>
                             </button>
                         </div>
-                        <input type="text"  id="{{$key}}-{{$value[0]}}" name="{{$value[0]}}" class="form-control input-number text-center" value="{{$value[1]}}" min="{{$value[1]}}" max="10000">
+                        <input type="text" pattern="[0-9]*" inputmode="numeric" id="{{$key}}-{{$value[0]}}" name="{{$value[0]}}" class="form-control input-number text-center" value="{{$value[1]}}" min="{{$value[1]}}" max="10000">
                         <div class="input-group-btn input-group-append">
                             <button type="button"  class="btn btn-secondary btn-number rounded-right" data-type="plus" data-field="{{$key}}-{{$value[0]}}">
                                 <i class="fa fa-plus"></i>
@@ -106,7 +106,7 @@
                                 <i class="fa fa-minus"></i>
                             </button>
                         </div>
-                        <input type="text"  id="{{$key}}-{{$value[0]}}" name="{{$value[0]}}" class="form-control input-number text-center" value="{{$value[1]}}" min="{{$value[1]}}" max="10000">
+                        <input type="text" pattern="[0-9]*" inputmode="numeric" id="{{$key}}-{{$value[0]}}" name="{{$value[0]}}" class="form-control input-number text-center" value="{{$value[1]}}" min="{{$value[1]}}" max="10000">
                         <div class="input-group-btn input-group-append">
                             <button type="button"  class="btn btn-secondary btn-number rounded-right" data-type="plus" data-field="{{$key}}-{{$value[0]}}">
                                 <i class="fa fa-plus"></i>
@@ -136,7 +136,7 @@
                                 <i class="fa fa-minus"></i>
                             </button>
                         </div>
-                        <input type="text"  id="{{$key}}-{{$value[0]}}" name="{{$value[0]}}" class="form-control input-number text-center" value="{{$value[1]}}" min="{{$value[1]}}" max="10000">
+                        <input type="text" pattern="[0-9]*" inputmode="numeric" id="{{$key}}-{{$value[0]}}" name="{{$value[0]}}" class="form-control input-number text-center" value="{{$value[1]}}" min="{{$value[1]}}" max="10000">
                         <div class="input-group-btn input-group-append">
                             <button type="button"  class="btn btn-secondary btn-number rounded-right" data-type="plus" data-field="{{$key}}-{{$value[0]}}">
                                 <i class="fa fa-plus"></i>

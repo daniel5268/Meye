@@ -234,6 +234,30 @@ $('.btn-number').click(function(e){
         input.val(0);
     }
 });
+$('.btn-number').each(function(e){
+    fieldName = $(this).attr('data-field');
+    type      = $(this).attr('data-type');
+    var input = $("#"+fieldName);
+    var currentVal = parseInt(input.val());
+    
+    
+    
+    if(type == 'minus'){
+
+        if(parseInt(input.val()) > input.attr('min')) {
+            $(this).attr('disabled', false);
+        }
+
+    } else if(type == 'plus') {
+
+        if(parseInt(input.val()) < input.attr('max')) {
+            $(this).attr('disabled', false);
+        }
+
+    }
+    
+});
+
 $('.input-number').focusin(function(){
    $(this).data('oldValue', $(this).val());
 });

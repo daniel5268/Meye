@@ -32,16 +32,16 @@
                     @endforeach                    
                 </select>
             </div>
-            <div class ="input-group  col align-items-center">
-                <div class="input-group-prepend">
-                    <button style="min-width: 2.5rem" class="btn btn-decrement btn-outline-light" type="button">
-                        <strong>-</strong>
+            <div class="input-group">
+                <div class="input-group-btn input-group-prepend">
+                    <button type="button" class="btn btn-dark btn-number rounded-left" disabled="disabled" data-type="minus" data-field="amount">
+                        <i class="fa fa-minus"></i>
                     </button>
                 </div>
-                <input type="text" pattern="[0-9]*" inputmode="numeric" value="0" style="text-align: center" class="form-control bg-light h-100" name="amount">
-                <div class="input-group-append">
-                    <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-light" type="button">
-                        <strong>+</strong>
+                <input type="text"  inputmode="numeric" id="amount" name="amount" class="form-control input-number text-center" value="0" min="0" max="1000000">
+                <div class="input-group-btn input-group-append">
+                    <button type="button"  class="btn btn-dark btn-number rounded-right" data-type="plus" data-field="amount">
+                        <i class="fa fa-plus"></i>
                     </button>
                 </div>
             </div>
@@ -55,170 +55,28 @@
         @csrf
         <input type="hidden" value="{{$key}}" name="id">
         <div class="pj-div row justify-content-center justify-content-md-between" id="{{$key}}">
+            
+            @foreach ($pj['numeric'] as $name => $value)
             <div class="text-center mb-3">
                 <div class="w-75 meye-label mx-auto  rounded-top">
-                    Edad
+                    {{$value['0']}}
                 </div>
-                <div class  ="input-group  ">
-                    <div class="input-group-prepend">
-                        <button style="min-width: 2.5rem" class="btn btn-decrement btn-outline-light" type="button">
-                            <strong>-</strong>
+                <div class="input-group">
+                    <div class="input-group-btn input-group-prepend">
+                        <button type="button" class="btn btn-dark btn-number rounded-left" disabled="disabled" data-type="minus" data-field="{{$key}}-{{$name}}">
+                            <i class="fa fa-minus"></i>
                         </button>
                     </div>
-                    <input type="text" pattern="[0-9]*" inputmode="numeric" value="{{$pj['edad']}}" style="text-align: center" class="form-control bg-light" name="edad">
-                    <div class="input-group-append">
-                        <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-light" type="button">
-                            <strong>+</strong>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="text-center mb-3">                            
-                <div class="w-75 meye-label mx-auto  rounded-top">
-                    Altura
-                </div>
-                <div class  ="input-group  ">
-                    <div class="input-group-prepend">
-                        <button style="min-width: 2.5rem" class="btn btn-decrement btn-outline-light" type="button">
-                            <strong>-</strong>
-                        </button>
-                    </div>
-                    <input type="text" pattern="[0-9]*" inputmode="numeric" value="{{$pj['altura']}}" style="text-align: center" class="form-control bg-light" name="altura">
-                    <div class="input-group-append">
-                        <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-light" type="button">
-                            <strong>+</strong>
+                    <input type="text"  inputmode="numeric" id="{{$key}}-{{$name}}" name="{{$name}}" class="form-control input-number text-center" value="{{$value[1]}}" min="{{$value[2]}}" max="{{$value[3]}}">
+                    <div class="input-group-btn input-group-append">
+                        <button type="button"  class="btn btn-dark btn-number rounded-right" data-type="plus" data-field="{{$key}}-{{$name}}">
+                            <i class="fa fa-plus"></i>
                         </button>
                     </div>
                 </div>
             </div>
-            <div class="text-center mb-3">                            
-                <div class="w-75 meye-label mx-auto  rounded-top">
-                    Peso
-                </div>
-                <div class  ="input-group  ">
-                    <div class="input-group-prepend">
-                        <button style="min-width: 2.5rem" class="btn btn-decrement btn-outline-light" type="button">
-                            <strong>-</strong>
-                        </button>
-                    </div>
-                    <input type="text" pattern="[0-9]*" inputmode="numeric" value="{{$pj['peso']}}" style="text-align: center" class="form-control bg-light" name="peso">
-                    <div class="input-group-append">
-                        <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-light" type="button">
-                            <strong>+</strong>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="text-center mb-3">                            
-                <div class="w-75 meye-label mx-auto  rounded-top">
-                    Tamaño de equipo
-                </div>
-                <div class  ="input-group  ">
-                    <div class="input-group-prepend">
-                        <button style="min-width: 2.5rem" class="btn btn-decrement btn-outline-light" type="button">
-                            <strong>-</strong>
-                        </button>
-                    </div>
-                    <input type="text" pattern="[0-9]*" inputmode="numeric" value="{{$pj['bolsa']}}" style="text-align: center" class="form-control bg-light" name="bolsa">
-                    <div class="input-group-append">
-                        <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-light" type="button">
-                            <strong>+</strong>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="text-center mb-3">                            
-                <div class="w-75 meye-label mx-auto  rounded-top">
-                    Locura
-                </div>
-                <div class  ="input-group  ">
-                    <div class="input-group-prepend">
-                        <button style="min-width: 2.5rem" class="btn btn-decrement btn-outline-light" type="button">
-                            <strong>-</strong>
-                        </button>
-                    </div>
-                    <input type="text" pattern="[0-9]*" inputmode="numeric" value="{{$pj['cordura']}}" style="text-align: center" class="form-control bg-light" name="cordura">
-                    <div class="input-group-append">
-                        <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-light" type="button">
-                            <strong>+</strong>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="text-center mb-3">                            
-                <div class="w-75 meye-label mx-auto  rounded-top">
-                    Carisma
-                </div>
-                <div class  ="input-group  ">
-                    <div class="input-group-prepend">
-                        <button style="min-width: 2.5rem" class="btn btn-decrement btn-outline-light" type="button">
-                            <strong>-</strong>
-                        </button>
-                    </div>
-                    <input type="text" pattern="[0-9]*" inputmode="numeric" value="{{$pj['carisma']}}" style="text-align: center" class="form-control bg-light" name="carisma">
-                    <div class="input-group-append">
-                        <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-light" type="button">
-                            <strong>+</strong>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="text-center mb-3">                            
-                <div class="w-75 meye-label mx-auto  rounded-top">
-                    Villanía
-                </div>
-                <div class  ="input-group  ">
-                    <div class="input-group-prepend">
-                        <button style="min-width: 2.5rem" class="btn btn-decrement btn-outline-light" type="button">
-                            <strong>-</strong>
-                        </button>
-                    </div>
-                    <input type="text" pattern="[0-9]*" inputmode="numeric" value="{{$pj['villania']}}" style="text-align: center" class="form-control bg-light" name="villania">
-                    <div class="input-group-append">
-                        <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-light" type="button">
-                            <strong>+</strong>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="text-center mb-3">
-                <div class="w-75 meye-label mx-auto  rounded-top">
-                    Heroismo
-                </div>
-                <div class  ="input-group  ">
-                    <div class="input-group-prepend">
-                        <button style="min-width: 2.5rem" class="btn btn-decrement btn-outline-light" type="button">
-                            <strong>-</strong>
-                        </button>
-                    </div>
-                    <input type="text" pattern="[0-9]*" inputmode="numeric" value="{{$pj['heroismo']}}" style="text-align: center" class="form-control bg-light" name="heroismo">
-                    <div class="input-group-append">
-                        <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-light" type="button">
-                            <strong>+</strong>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="text-center mb-3">
-                <div class="w-75 meye-label mx-auto  rounded-top">
-                    Apariencia
-                </div>
-                <div class  ="input-group  ">
-                    <div class="input-group-prepend">
-                        <button style="min-width: 2.5rem" class="btn btn-decrement btn-outline-light" type="button">
-                            <strong>-</strong>
-                        </button>
-                    </div>
-                    <input type="text" pattern="[0-9]*" inputmode="numeric" value="{{$pj['apariencia']}}" style="text-align: center" class="form-control bg-light" name="apariencia">
-                    <div class="input-group-append">
-                        <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-light" type="button">
-                            <strong>+</strong>
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-
+            @endforeach
+            
             <div class="form-group col-12 mt-2">
                 <label class="text-light" for="description">Descripción</label>
                 <textarea class="form-control" id="description" name="description">{{$pj['description']}}</textarea>
