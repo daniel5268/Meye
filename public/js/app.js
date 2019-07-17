@@ -81468,6 +81468,10 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
 
 $('#register-button').click(function () {
   $('#register-form').submit();
+});
+$('.delete-button').click(function () {
+  formId = $(this).attr('data-form');
+  $('#' + formId).submit();
 }); //charts
 //--- Villanía/Heroismo
 

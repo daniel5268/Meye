@@ -95,8 +95,36 @@ class MasterController extends Controller
         $data['packable']=$pack;
         unset($data['_token']);
         $obj=Obj::create($data);
-        return redirect()->back()->with('message','Objeto creado con éxito');
-        
-        
+        return redirect()->back()->with('message',$obj->name.' creado con éxito');
+    }
+    public function updateObject(Request $request)
+    {
+        $validatedData = $request->validate([
+            'name'=>'required',
+            'price'=>'required|numeric',
+            'damage'=>'numeric',
+            'resistence'=>'numeric',
+            'of_blood'=>'numeric',
+            'cushioned'=>'numeric',
+            'weight'=>'numeric',
+            'throw'=>'numeric',
+            'duration'=>'numeric',
+        ]);
+        $data = $request->all();
+        $stand = array_key_exists('standard',$data);
+        $pack  = array_key_exists('packable',$data);
+        if ($stand and !$pack){
+            return redirect()->back()->with('warning','No se permiten objetos estandar no equipables');
+        }
+        $data['standard']=$stand;
+        $data['packable']=$pack;
+        unset($data['_token']);
+        Obj::where('id', $data['id'])->update($data);
+        return redirect()->back()->with(['message'=>$data['name'].' modificado con éxito','last'=>$data['id']]);
+    }
+    public function deleteObject(Request $request)
+    {
+        Obj::where('id', '=', $request->id)->delete();
+        return redirect()->back()->with('warning','Objeto eliminado con éxito');
     }
 }

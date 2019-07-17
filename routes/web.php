@@ -39,6 +39,10 @@ Route::post('/pj-create', 'ProfileController@createPj')->name('createPj')->middl
 
 Route::post('/object-create', 'MasterController@createObject')->name('createObject')->middleware('authWarning')->middleware('checkRole:master');
 
+Route::post('/object-update', 'MasterController@updateObject')->name('updateObject')->middleware('authWarning')->middleware('checkRole:master');
+
+Route::post('/object-delete', 'MasterController@deleteObject')->name('deleteObject')->middleware('authWarning')->middleware('checkRole:master');
+
 Route::get('/pj-list', 'ProfileController@listPjs')->name('listPjs')->middleware('authWarning');
 Route::post('/pj-list', 'ProfileController@updatePj')->middleware('authWarning');
 

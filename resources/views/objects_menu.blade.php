@@ -19,8 +19,9 @@
     </div>
 </div>
 @foreach ($objects as $id=>$object)
-<form method="POST" action="{{ route('createObject') }}">
+<form method="POST" action="{{ route('updateObject') }}">
 <div class="row justify-content-center p-3 object-div" id="{{$id}}">
+    <input type="hidden" name="id" value="{{$id}}">
     @foreach ($bool as $name=>$info)
         <div class="form-check mb-3 mx-auto form-check-inline col-5 d-flex justify-content-center mx-auto">
             <input type="checkbox" @if($object[$name]) checked="" @endif  class="form-check-input {{$name}}-checkbox" name="{{$name}}" id='update-{{$name}}-{{$id}}'>
@@ -52,13 +53,13 @@
                 </div>
                 <div class="input-group">
                     <div class="input-group-btn input-group-prepend">
-                        <button type="button" class="btn btn-dark btn-number rounded-left" disabled="disabled" data-type="minus" data-field="create-{{$name}}">
+                        <button type="button" class="btn btn-dark btn-number rounded-left" disabled="disabled" data-type="minus" data-field="update-{{$name}}-{{$id}}">
                             <i class="fa fa-minus"></i>
                         </button>
                     </div>
-                    <input type="text" pattern="[0-9]*" inputmode="numeric" id="update-{{$name}}-{{$id}}" name="{{$name}}" class="form-control input-number text-center" value="{{$object[$name]}}" min="0" max="10000">
+                    <input type="text" pattern="[0-9]*" inputmode="numeric" id="update-{{$name}}-{{$id}}" name="{{$name}}" class="form-control input-number text-center" value="{{$object[$name]}}" min="0" max="{{$info['max']}}">
                     <div class="input-group-btn input-group-append">
-                        <button type="button"  class="btn btn-dark btn-number rounded-right" data-type="plus" data-field="create-{{$name}}">
+                        <button type="button"  class="btn btn-dark btn-number rounded-right" data-type="plus" data-field="update-{{$name}}-{{$id}}">
                             <i class="fa fa-plus"></i>
                         </button>
                     </div>
@@ -92,12 +93,16 @@
         </div>
         <div class="col-5 col-md-4 col-lg-3 mt-2">
             @csrf
-            <button type="submit" class="btn meye-btn-red text-light btn-block">
+            <button type="button" data-form="delete-{{$id}}" class="btn delete-button meye-btn-red text-light btn-block">
                 <i class="fa fa-trash-o"></i>
             </button>
         </div>
     </div>
 </div>    
+</form>
+<form method="POST" id="delete-{{$id}}" action="{{ route('deleteObject') }}">
+@csrf
+<input type="hidden" name="id" value="{{$id}}">
 </form>
 @endforeach
 
