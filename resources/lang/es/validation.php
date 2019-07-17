@@ -141,7 +141,8 @@ return [
     'attributes' => [
         'username' => 'usuario',
         'password' => 'contraseña',
-        'new_password' => 'nueva contraseña'
+        'new_password' => 'nueva contraseña',
+        'name' => 'nombre',
     ],
     
 ];

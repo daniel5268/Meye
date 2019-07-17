@@ -81717,7 +81717,6 @@ $('#pj-select').change(function () {
 }); //Calculo de xp gastada
 
 $.fn.calcDiv = function () {
-  console.log('Entra calcDiv');
   var fis = selected.hasClass('Fisico');
   var men = selected.hasClass('Mental');
   var coor = selected.hasClass('Coordinacion');
@@ -81834,13 +81833,69 @@ $.fn.calcDiv = function () {
 
   selected.find('.t1-val').text(cost1);
   selected.find('.t2-val').text(cost2);
-  console.log('Sale calcDiv');
 };
 
-selected.calcDiv();
-$('.input-number').change(function () {
+if (selected != null) {
   selected.calcDiv();
+}
+
+$('.input-number').change(function () {
+  if (selected != null) {
+    selected.calcDiv();
+  }
+}); //Estandar equipable
+
+var updateStandard = function updateStandard() {
+  var checkbox = $(this);
+  var checked = checkbox.is(":checked");
+  var row = checkbox.closest('.row');
+
+  if (checked) {
+    row.find('.packable-checkbox').each(function () {
+      $(this).prop('checked', true);
+    });
+    row.find('.standard').each(function () {
+      $(this).removeClass('d-none');
+    });
+  } else {
+    row.find('.standard').each(function () {
+      $(this).addClass('d-none');
+    });
+  }
+};
+
+var updatePackable = function updatePackable() {
+  var checkbox = $(this);
+  var checked = !checkbox.is(":checked");
+  var row = checkbox.closest('.row');
+
+  if (checked) {
+    row.find(".standard-checkbox").each(function () {
+      $(this).prop('checked', false);
+      $(this).change();
+    });
+  }
+};
+
+$.fn.changeObject = function () {
+  var val = $(this).val();
+  $('.object-div').each(function () {
+    if ($(this).attr('id') == val) {
+      $(this).removeClass('d-none');
+    } else {
+      $(this).addClass('d-none');
+    }
+  });
+};
+
+$('#object-select').changeObject();
+$('#object-select').change(function () {
+  $(this).changeObject();
 });
+$('.standard-checkbox').each(updateStandard);
+$('.packable-checkbox').each(updatePackable);
+$('.standard-checkbox').change(updateStandard);
+$('.packable-checkbox').change(updatePackable);
 
 /***/ }),
 

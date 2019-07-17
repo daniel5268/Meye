@@ -10645,23 +10645,30 @@ a.text-dark:focus {
 }
 
 .meye-btn-blue {
-  background: #3490dc;
-  border: 2px solid rgba(50, 50, 50, 0.1);
+  background: rgba(75, 192, 192, 0.4);
+  border: 1px solid #4bc0c0;
 }
 
 .meye-btn-blue:hover {
-  border: 2px solid rgba(250, 250, 250, 0.1);
-  background: #6cb2eb;
+  background: rgba(75, 192, 192, 0.8);
 }
 
 .meye-btn-green {
-  background: #38c172;
-  border: 2px solid rgba(50, 50, 50, 0.1);
+  background: rgba(75, 255, 152, 0.3);
+  border: 1px solid #4bff98;
 }
 
 .meye-btn-green:hover {
-  border: 2px solid rgba(250, 250, 250, 0.1);
-  background: #6cb2eb;
+  background: rgba(75, 255, 152, 0.6);
+}
+
+.meye-btn-red {
+  background: rgba(255, 120, 120, 0.4);
+  border: 1px solid #ff7878;
+}
+
+.meye-btn-red:hover {
+  background: rgba(255, 120, 120, 0.8);
 }
 
 .nav-link {
@@ -10721,5 +10728,6 @@ a.text-dark:focus {
 .meye-calc-value {
   color: #fff;
   background: rgba(0, 0, 0, 0.8);
+  border: solid 1px black;
 }
 

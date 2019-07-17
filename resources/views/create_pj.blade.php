@@ -58,8 +58,8 @@
             <div class="row justify-content-center">
                 <div class="col col-sm-4 col-md-3 ">
                     @csrf
-                    <button type="submit" class="btn text-light btn-block meye-btn-blue">
-                        {{ __('Crear Pj') }}
+                    <button type="submit" class="btn text-light btn-block meye-btn-green">
+                        <li class="fa fa-upload"></li>
                     </button>
                 </div>
             </div>

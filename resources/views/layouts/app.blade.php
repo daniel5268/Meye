@@ -50,6 +50,9 @@
                                 @if(Auth::user()->type == 'master')
                                     <li class="nav-item" >
                                         <a href="{{route('managePj')}}" class="nav-link meye-nav-link pl-2 text-muted">Gestionar Pjs</a>
+                                    </li>
+                                    <li class="nav-item" >
+                                        <a href="{{route('manageObjects')}}" class="nav-link meye-nav-link pl-2 text-muted">Gestionar Objetos</a>
                                     </li>                                
                                 @endif
                                 <li class="nav-item" >

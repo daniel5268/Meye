@@ -172,7 +172,7 @@
         </section>
         <div class="row justify-content-center mb-5">
             <div class="col-8 col-md-6 col-lg-4">
-                <button type="submit" class="btn text-light meye-btn-green btn-block">Guardar</button>
+                <button type="submit" class="btn text-light meye-btn-green btn-block"><i class="fa fa-save"></i></button>
             </div>
         </div>
     </div>

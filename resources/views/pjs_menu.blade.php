@@ -19,7 +19,8 @@
         </div>        
     </div>
     @foreach ($pjs as $key => $pj)
-    <div class="pj-div row justify-content-center justify-content-md-between mb-3" id="{{$key}}">
+    <div class="pj-div row justify-content-center justify-content-md-between mb-2" id="{{$key}}">
+        
         <form method="POST" class="d-flex justify-content-center" action="{{ route('giveXp') }}">
         @csrf
             <input type="hidden" name="id" value="{{$key}}">
@@ -46,18 +47,21 @@
                 </div>
             </div>
             <div class="col-auto">
-                <button type="submit" class="btn mx-auto text-light meye-btn-green"> Asignar </button>
+                <button type="submit" class="btn mx-auto text-light meye-btn-green">Asignar</button>
             </div>
             
         </form>
     </div>
     <form method="POST" action="{{ route('managePj') }}">
         @csrf
+        <hr>
         <input type="hidden" value="{{$key}}" name="id">
-        <div class="pj-div row justify-content-center justify-content-md-between" id="{{$key}}">
-            
+        <div class="col d-flex justify-content-center">            
+            <h4 class="text-light">Datos generales</h4>
+        </div>
+        <div class="pj-div row mt-4 justify-content-center justify-content-md-between" id="{{$key}}">
             @foreach ($pj['numeric'] as $name => $value)
-            <div class="text-center mb-3">
+            <div class="text-center mb-3 mx-auto">
                 <div class="w-75 meye-label mx-auto  rounded-top">
                     {{$value['0']}}
                 </div>
@@ -81,7 +85,7 @@
                 <label class="text-light" for="description">Descripción</label>
                 <textarea class="form-control" id="description" name="description">{{$pj['description']}}</textarea>
             </div>
-            <div class="form-check mx-auto">
+            <div class="col-12 form-check form-check-inline d-flex justify-content-center mx-auto">
                 @if($pj['commerce'])
                     <input class="form-check-input" type="checkbox" checked  name="commerce" id="commerce">
                 @else
@@ -91,10 +95,10 @@
                 Permitir comercio
                 </label>
             </div>
-            <div class="col-12 d-flex justify-content-center">
+            <div class="col-8 col-md-6 col-lg-4 d-flex justify-content-center mx-auto">
                 @csrf
-                <button type="submit" class="btn my-3 mx-auto text-light meye-btn-green">
-                    {{ __('Guardar') }}
+                <button type="submit" class="btn btn-block my-3 text-light meye-btn-green">
+                    <i class="fa fa-save"></i>
                 </button>
             </div>            
         </div>        

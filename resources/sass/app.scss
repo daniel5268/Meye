@@ -8,19 +8,24 @@
 @import '~bootstrap/scss/bootstrap';
 
 .meye-btn-blue{
-	background: $blue;
-	border: 2px solid rgba(50,50,50,.1); 
+	background: rgba(75,192,192,.4);
+	border: 1px solid rgb(75,192,192);
 	&:hover{
-		border: 2px solid rgba(250,250,250,.1); 
-		background: $greenHover;
+		background: rgba(75,192,192,.8);
 	}
 }
 .meye-btn-green{
-	background: $green;
-	border: 2px solid rgba(50,50,50,.1); 
+	background: rgba(75,255,152,.3);
+	border: 1px solid rgb(75,255,152);
 	&:hover{
-		border: 2px solid rgba(250,250,250,.1); 
-		background: $greenHover;
+		background: rgba(75,255,152,.6);
+	}
+}
+.meye-btn-red{
+	background: rgba(255,120,120,.4);
+	border: 1px solid rgb(255,120,120);
+	&:hover{
+		background: rgba(255,120,120,.8);
 	}
 }
 
@@ -78,4 +83,5 @@
 .meye-calc-value{
 	color: #fff;
 	background: rgba(0,0,0, .8);	
+	border: solid 1px rgb(0,0,0);
 }

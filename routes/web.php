@@ -28,6 +28,7 @@ Route::get('/password-reset', 'BossController@passwordResetForm')->name('passwor
 Route::post('/password-reset', 'BossController@passwordReset')->middleware('authWarning')->middleware('checkRole:admin');
 
 Route::get('/password-update', 'UserController@passwordUpdateForm')->name('passwordUpdate')->middleware('authWarning');
+Route::get('/objects-manage', 'MasterController@manageObjectsForm')->name('manageObjects')->middleware('authWarning')->middleware('checkRole:master');
 
 
 Route::post('/password-update', 'UserController@passwordUpdate')->name('passwordUpdate');
@@ -36,11 +37,15 @@ Route::post('/password-update', 'UserController@passwordUpdate')->name('password
 Route::get('/pj-create', 'ProfileController@createPjForm')->name('createPj')->middleware('authWarning');
 Route::post('/pj-create', 'ProfileController@createPj')->name('createPj')->middleware('authWarning');
 
+Route::post('/object-create', 'MasterController@createObject')->name('createObject')->middleware('authWarning')->middleware('checkRole:master');
+
 Route::get('/pj-list', 'ProfileController@listPjs')->name('listPjs')->middleware('authWarning');
 Route::post('/pj-list', 'ProfileController@updatePj')->middleware('authWarning');
 
 Route::get('/pjs-manage', 'MasterController@managePjForm')->name('managePj')->middleware('authWarning')->middleware('checkRole:master');
 
 Route::post('/pjs-manage', 'MasterController@managePj')->name('managePj')->middleware('authWarning')->middleware('checkRole:master');
+
+Route::post('/assignation', 'MasterController@assignation')->name('giveXp')->middleware('authWarning')->middleware('checkRole:master');
 
 Route::post('/assignation', 'MasterController@assignation')->name('giveXp')->middleware('authWarning')->middleware('checkRole:master');

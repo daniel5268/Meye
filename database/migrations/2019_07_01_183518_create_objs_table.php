@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateObjectsTable extends Migration
+class CreateObjsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateObjectsTable extends Migration
      */
     public function up()
     {
-        Schema::create('objects', function (Blueprint $table) {
+        Schema::create('objs', function (Blueprint $table) {
             $table->bigIncrements('id');
 
 
@@ -23,6 +23,9 @@ class CreateObjectsTable extends Migration
             $table->integer('resistence')->nullable();
             $table->integer('of_blood')->nullable();
             $table->integer('cushioned')->nullable();
+            $table->integer('weight')->nullable();
+            $table->integer('throw')->nullable();
+            $table->integer('duration')->nullable();
             $table->text('description')->nullable();
             $table->boolean('standard');
             $table->boolean('packable');
@@ -37,6 +40,6 @@ class CreateObjectsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('objects');
+        Schema::dropIfExists('objs');
     }
 }
