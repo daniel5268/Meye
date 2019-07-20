@@ -27,4 +27,9 @@ class Obj extends Model
     		'description'=>['type'=>'text','title'=>'Descripción'],
     	];
     }
+
+    public function obj_ownerships()
+    {
+        return $this->hasMany('App\Obj_ownership');
+    }
 }

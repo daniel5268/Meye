@@ -31,4 +31,9 @@ class Pj extends Model
     protected $casts = [
         
     ];
+
+    public function obj_ownerships()
+    {
+        return $this->hasMany('App\Obj_ownership');
+    }
 }

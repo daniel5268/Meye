@@ -22,42 +22,42 @@ class CreateObjOwnershipsTable extends Migration
             $table->unsignedBigInteger('pj_id');
             $table->foreign('pj_id')->references('id')->on('pjs');
 
-            $table->integer('allowed');
+            $table->integer('allowed')->default('0');
             
-            $table->integer('esp_d');
-            $table->integer('esp_c');
-            $table->integer('esp_i');
+            $table->integer('esp_d')->default('0');
+            $table->integer('esp_c')->default('0');
+            $table->integer('esp_i')->default('0');
             
-            $table->integer('pec_d');
-            $table->integer('pec_i');
+            $table->integer('pec_d')->default('0');
+            $table->integer('pec_i')->default('0');
 
-            $table->integer('cad_d');
-            $table->integer('cad_c');
-            $table->integer('cad_i');
+            $table->integer('cad_d')->default('0');
+            $table->integer('cad_c')->default('0');
+            $table->integer('cad_i')->default('0');
             
-            $table->integer('mus_d');
-            $table->integer('mus_i');
+            $table->integer('mus_d')->default('0');
+            $table->integer('mus_i')->default('0');
             
-            $table->integer('bag_1');
-            $table->integer('bag_2');
-            $table->integer('bag_3');
-            $table->integer('bag_4');
-            $table->integer('bag_5');
-            $table->integer('bag_6');
-            $table->integer('bag_7');
-            $table->integer('bag_8');
-            $table->integer('bag_9');
-            $table->integer('bag_10');
-            $table->integer('bag_11');
-            $table->integer('bag_12');
-            $table->integer('bag_13');
-            $table->integer('bag_14');
-            $table->integer('bag_15');
-            $table->integer('bag_16');
-            $table->integer('bag_17');
-            $table->integer('bag_18');
+            $table->integer('bag_1')->default('0');
+            $table->integer('bag_2')->default('0');
+            $table->integer('bag_3')->default('0');
+            $table->integer('bag_4')->default('0');
+            $table->integer('bag_5')->default('0');
+            $table->integer('bag_6')->default('0');
+            $table->integer('bag_7')->default('0');
+            $table->integer('bag_8')->default('0');
+            $table->integer('bag_9')->default('0');
+            $table->integer('bag_10')->default('0');
+            $table->integer('bag_11')->default('0');
+            $table->integer('bag_12')->default('0');
+            $table->integer('bag_13')->default('0');
+            $table->integer('bag_14')->default('0');
+            $table->integer('bag_15')->default('0');
+            $table->integer('bag_16')->default('0');
+            $table->integer('bag_17')->default('0');
+            $table->integer('bag_18')->default('0');
             
-            $table->integer('storage');
+            $table->integer('storage')->default('0');
 
             $table->timestamps();
         });

@@ -23,7 +23,8 @@ class CreateObjsTable extends Migration
             $table->integer('resistence')->nullable();
             $table->integer('of_blood')->nullable();
             $table->integer('cushioned')->nullable();
-            $table->integer('weight')->nullable();
+            $table->float('weight',4,2)->nullable();
+            $table->float('bag_weight',4,2)->nullable();
             $table->integer('throw')->nullable();
             $table->integer('duration')->nullable();
             $table->text('description')->nullable();

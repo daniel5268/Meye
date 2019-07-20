@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\PjRepo;
+use App\Obj;
+use App\Obj_ownership;
 use Illuminate\Support\Facades\Auth;
 
 class ProfileController extends Controller
@@ -48,7 +50,15 @@ class ProfileController extends Controller
     	$fortaleza1 = $request->input('fortaleza1');
     	$fortaleza2 = $request->input('fortaleza2');
     	$description = $request->input('description');
-    	PjRepo::create($nombre,$tipo,$fortaleza1,$fortaleza2,$description);
+    	$pj = PjRepo::create($nombre,$tipo,$fortaleza1,$fortaleza2,$description);
+        $objects = Obj::all();
+        $data = [
+            'pj_id' => $pj->id 
+        ];
+        foreach ($objects as $object){
+            $data['obj_id'] = $object->id;
+            Obj_ownership::create($data);
+        }
     	return redirect()->route('home')->with('message',$nombre.' creado con éxito');
     }
     

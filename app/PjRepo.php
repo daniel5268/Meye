@@ -43,6 +43,7 @@ class PjRepo extends Model
 		$pj->apariencia=$data['apariencia'];
 		$pj->description=$data['description'];
 		$pj->commerce=array_key_exists('commerce', $data);
+		$pj->storage=array_key_exists('storage', $data);
 		$pj->save();		
 	}
 	public static function getPossibleTypes(){

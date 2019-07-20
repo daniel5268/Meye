@@ -210,9 +210,11 @@ $('.meye-nav-link').each(function(){
 $('.btn-number').click(function(e){
     e.preventDefault();
     
-    fieldName = $(this).attr('data-field');
-    type      = $(this).attr('data-type');
-    var input = $("#"+fieldName);
+    var fieldName = $(this).attr('data-field');
+    var type      = $(this).attr('data-type');
+    var ig = $(this).closest('.input-group')
+    var input = ig.find("input");
+    //console.log("input[id='"+fieldName+"]",input);
     var currentVal = parseInt(input.val());
     
     if (!isNaN(currentVal)) {

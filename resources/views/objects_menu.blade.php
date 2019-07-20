@@ -15,7 +15,7 @@
                     </option>
                 @endforeach                    
             </select>
-        </div>        
+        </div>
     </div>
 </div>
 @foreach ($objects as $id=>$object)
@@ -57,7 +57,7 @@
                             <i class="fa fa-minus"></i>
                         </button>
                     </div>
-                    <input type="text" pattern="[0-9]*" inputmode="numeric" id="update-{{$name}}-{{$id}}" name="{{$name}}" class="form-control input-number text-center" value="{{$object[$name]}}" min="0" max="{{$info['max']}}">
+                    <input type="text" pattern="[0-9]+(\.[0-9]+)?" inputmode="decimal" id="update-{{$name}}-{{$id}}" name="{{$name}}" class="form-control input-number text-center" value="{{$object[$name]}}" min="0" max="{{$info['max']}}">
                     <div class="input-group-btn input-group-append">
                         <button type="button"  class="btn btn-dark btn-number rounded-right" data-type="plus" data-field="update-{{$name}}-{{$id}}">
                             <i class="fa fa-plus"></i>
@@ -98,6 +98,7 @@
             </button>
         </div>
     </div>
+    
 </div>    
 </form>
 <form method="POST" id="delete-{{$id}}" action="{{ route('deleteObject') }}">
@@ -108,8 +109,10 @@
 
 <form method="POST" action="{{ route('createObject') }}">
 <div class="row justify-content-center p-3">
-    <div class="col-12 text-center text-light">
+    <div class="col-12">        
         <hr class="mb-4">
+    </div>
+    <div class="col-12 text-center text-light">
         <h4>Crear objeto</h4>
     </div>
     @foreach ($bool as $name=>$info)
@@ -148,7 +151,7 @@
                             <i class="fa fa-minus"></i>
                         </button>
                     </div>
-                    <input type="text" pattern="[0-9]*" inputmode="numeric" id="create-{{$name}}" name="{{$name}}" class="form-control input-number text-center" value="0" min="0" max="10000">
+                    <input type="text" pattern="[0-9]+(\.[0-9]+)?" inputmode="decimal" id="create-{{$name}}" name="{{$name}}" class="form-control input-number text-center" value="0" min="0" max="10000">
                     <div class="input-group-btn input-group-append">
                         <button type="button"  class="btn btn-dark btn-number rounded-right" data-type="plus" data-field="create-{{$name}}">
                             <i class="fa fa-plus"></i>

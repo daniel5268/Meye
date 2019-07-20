@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\PjRepo;
 use App\AssignationRepo;
 use App\Obj;
+use App\Obj_ownership;
 
 class MasterController extends Controller
 {
@@ -17,6 +18,7 @@ class MasterController extends Controller
         	$data[$pj->id]=[];
         	$data[$pj->id]['nombre'] = $pj->nombre;
         	$data[$pj->id]['commerce'] = $pj->commerce;
+            $data[$pj->id]['storage'] = $pj->storage;
         	
             $data[$pj->id]['numeric'] = [];
             
@@ -32,15 +34,34 @@ class MasterController extends Controller
         	
         	$data[$pj->id]['description'] = $pj->description;
             $data[$pj->id]['xpTypes'] = PjRepo::getPossibleAssignationTypes($pj->tipo);
+            $ownerships = $pj->obj_ownerships;
+            $data[$pj->id]['objects'] = [];
+            foreach ($ownerships as $ownership){
+                $obj = $ownership->obj;
+                $data[$pj->id]['objects'][$ownership->id] = ['name'=>$obj->name,'allowed'=>$ownership->allowed];
+            }
         }
+
         return view('pjs_menu')->with([
                 'pjs' => $data,
             ]);
     }
-    function managePj(Request $request){
+    public function managePj(Request $request){
     	$data=$request->all();
     	PjRepo::modify($data);
     	return redirect()->route('managePj')->with(['message'=>'Pj modificado con éxito','last'=>$data['id']]);
+    }
+
+    public function manageOwnerships(Request $request)
+    {
+        $id = $request->id;
+        $data = $request->all();
+        unset($data['_token']);
+        unset($data['id']);
+        foreach ($data as $key => $value){
+            Obj_ownership::where('id', $key)->update(['allowed'=>$value]);            
+        }
+        return redirect()->back()->with(['message'=>'Comercio modificado con éxito','last'=>$id]);
     }
 
     public function assignation(Request $request)
@@ -62,10 +83,18 @@ class MasterController extends Controller
         unset($info['packable']);
         $objects = Obj::all();
         $data=[];
+        
+        $pjs = PjRepo::allPjs();
+        $pjArray=[];
+        foreach ($pjs as $pj) {
+            $pjArray[$pj->id] = ['name'=>$pj->name]; 
+        }
+        
         foreach ($objects as $object) {
             $data[$object->id] = $object->toArray();
             unset($data[$object->id]['id']);
         }
+        
         return view('objects_menu')->with([
                 'objects' => $data,
                 'types' => $info,
@@ -95,6 +124,14 @@ class MasterController extends Controller
         $data['packable']=$pack;
         unset($data['_token']);
         $obj=Obj::create($data);
+        $pjs = PjRepo::allPjs();
+        $data = [
+            'obj_id' => $obj->id 
+        ];
+        foreach ($pjs as $pj){
+            $data['pj_id']=$pj->id;
+            Obj_ownership::create($data);
+        }
         return redirect()->back()->with('message',$obj->name.' creado con éxito');
     }
     public function updateObject(Request $request)
@@ -124,6 +161,7 @@ class MasterController extends Controller
     }
     public function deleteObject(Request $request)
     {
+        Obj_ownership::where('obj_id', '=', $request->id)->delete();
         Obj::where('id', '=', $request->id)->delete();
         return redirect()->back()->with('warning','Objeto eliminado con éxito');
     }
